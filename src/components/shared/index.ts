@@ -1,0 +1,14 @@
+export { BentoCard } from "./bento-card";
+export { BentoTilt } from "./bento-tilt";
+export { BrowseGames } from "./browse-games";
+export { Contact } from "./contact";
+export { Container } from "./container";
+export { FavouritesList } from "./favourites-list";
+export { Features } from "./features";
+export { Footer } from "./footer";
+export { GameCard } from "./game-card";
+export { GamesSlider } from "./games-slider";
+export { Header } from "./header";
+export { Hero } from "./hero";
+export { SearchInput } from "./search-input";
+export { Sort } from "./sort";
