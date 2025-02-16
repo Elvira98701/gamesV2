@@ -56,7 +56,11 @@ export const Contact: React.FC = () => {
             We will be glad <br /> to hear your <br /> opinion.
           </h3>
 
-          <div className="story-img-container">
+          <img
+            src="/images/contact.avif"
+            className="lg:hidden rounded-xl my-5"
+          />
+          <div className="story-img-container hidden lg:block">
             <div className="story-img-mask">
               <div className="story-img-content">
                 <img
@@ -100,7 +104,7 @@ export const Contact: React.FC = () => {
             </svg>
           </div>
         </div>
-        <div className="-mt-32 ml-auto max-w-96 relative z-10">
+        <div className="lg:-mt-32 ml-auto max-w-96 relative z-10">
           <p className="pb-5 text-sm">
             Do you have any questions, suggestions, or ideas to improve the
             service? We are always in touch!

@@ -31,7 +31,7 @@ export const Features: React.FC = () => {
   return (
     <section id="features">
       <Container>
-        <BentoTilt className="relative mb-7 h-96 w-full overflow-hidden rounded-xl md:h-[65vh] text-background">
+        <BentoTilt className="relative mb-4 md:mb-7 h-96 w-full overflow-hidden rounded-xl md:h-[65vh] text-background">
           <BentoCard
             src="/images/gallery/1.avif"
             title="Detailed filtering"
@@ -40,7 +40,7 @@ export const Features: React.FC = () => {
           />
         </BentoTilt>
 
-        <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
+        <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-4 md:gap-7">
           <BentoTilt className="row-span-1 md:col-span-1 md:row-span-2 rounded-xl text-background">
             <BentoCard
               src="/images/gallery/2.avif"
@@ -49,7 +49,7 @@ export const Features: React.FC = () => {
             />
           </BentoTilt>
 
-          <BentoTilt className="row-span-1 md:col-span-1 ms-0 rounded-xl">
+          <BentoTilt className="row-span-1 md:col-span-1 ms-0 rounded-xl text-background md:text-foreground">
             <BentoCard
               src="/images/gallery/3.avif"
               title="Favourites"
