@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 export const Favourites: React.FC = () => {
   return (
     <main className="bg-foreground">
-      <section className="p-7 overflow-hidden">
+      <section className="py-7 lg:p-7 overflow-hidden">
         <Container className="h-[50vh] flex justify-center gap-5">
           <BentoTilt className="rounded-xl flex-1">
             <div className="flex size-full flex-col justify-center bg-violet-300 p-5">

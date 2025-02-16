@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
         className="relative z-10 h-full w-full overflow-hidden rounded-3xl bg-foreground will-change-auto"
         id="video-frame"
       >
-        <div className="absolute left-0 top-0 w-full h-1/2 md:size-full overflow-hidden">
+        <div className="absolute left-0 top-0 w-full h-1/2 lg:size-full overflow-hidden">
           <video
             src="/video/video1.mp4"
             loop
@@ -37,10 +37,10 @@ export const Hero: React.FC = () => {
             className="object-cover object-right-bottom size-full"
           />
         </div>
-        <div className="absolute top-1/2 md:-translate-y-1/2 left-0 w-full">
+        <div className="absolute top-1/2 lg:-translate-y-1/2 left-0 w-full">
           <Container className="text-background lg:text-foreground">
             <h1>GameFinder</h1>
-            <p className="max-w-screen-md py-4">
+            <p className="max-w-screen-md py-4 text-sm sm:text-base">
               GameFinder is a convenient service for searching games by genre,
               platform, popularity, and other criteria. Find out information
               about your favorite games, find new projects based on your
@@ -51,7 +51,7 @@ export const Hero: React.FC = () => {
             <ButtonLink
               href="/games"
               size="lg"
-              className="bg-purple-300 text-foreground md:bg-foreground md:text-background"
+              className="bg-purple-300 text-foreground lg:bg-foreground lg:text-background"
             >
               Show all
             </ButtonLink>

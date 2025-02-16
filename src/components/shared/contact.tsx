@@ -48,12 +48,12 @@ export const Contact: React.FC = () => {
     <div id="story" className="min-h-[50vh] w-full text-background py-32">
       <Container className="flex flex-col items-center">
         <p className="text-sm uppercase md:text-[10px]">
-          the multiversal ip world
+          Make our service better
         </p>
 
         <div className="relative size-full">
           <h3 className="mt-5 mix-blend-difference relative z-10 text-center">
-            the story of <br /> a hidden <br /> realm
+            We will be glad <br /> to hear your <br /> opinion.
           </h3>
 
           <div className="story-img-container">
@@ -102,9 +102,8 @@ export const Contact: React.FC = () => {
         </div>
         <div className="-mt-32 ml-auto max-w-96 relative z-10">
           <p className="pb-5 text-sm">
-            The Open IP Universe The story of a hidden realm Where realms
-            converge, lies Zentry and the boundless pillar. Discover its secrets
-            and shape your fate amidst infinite opportunities.
+            Do you have any questions, suggestions, or ideas to improve the
+            service? We are always in touch!
           </p>
           <Button className="bg-primary text-foreground" type="button">
             Contact us

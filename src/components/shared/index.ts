@@ -10,5 +10,6 @@ export { GameCard } from "./game-card";
 export { GamesSlider } from "./games-slider";
 export { Header } from "./header";
 export { Hero } from "./hero";
+export { MobileMenu } from "./mobile-menu";
 export { SearchInput } from "./search-input";
 export { Sort } from "./sort";

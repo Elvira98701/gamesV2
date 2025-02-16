@@ -123,15 +123,16 @@ h3 {
      transition: 0.6s;
 }
 
-.animated-span:hover {
-  scale: 5;
+@media (hover: hover) {
+  .animated-span:hover {
+    scale: 5;
+  }
+  
+  .animated-span:hover img {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
 }
-
-.animated-span:hover img {
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-
 
 .story-img-container {
   @apply relative h-[70vh] w-full;
@@ -150,6 +151,9 @@ h3 {
   transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
 }
 
+.footer-title {
+  font-size: clamp(1.25rem, 1.05rem + 1vw, 2.25rem);
+}
 
 
 

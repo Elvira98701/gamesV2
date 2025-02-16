@@ -4,6 +4,7 @@ import { useWindowScroll } from "react-use";
 import { Logo, NavigationMenu } from "../ui";
 import { IPageItem } from "@/types/types";
 import { pageConfig } from "@/utils/pages.config";
+import { MobileMenu } from "./mobile-menu";
 
 const navItems: IPageItem[] = [
   {
@@ -56,7 +57,8 @@ export const Header: React.FC = () => {
       <header className="flex justify-center w-full">
         <div className="flex size-full items-center justify-between max-w-7xl p-6 min-h-20 bg-foreground text-background rounded-full border border-zinc-600">
           <Logo />
-          <NavigationMenu pagesList={navItems} />
+          <MobileMenu className="md:hidden" />
+          <NavigationMenu pagesList={navItems} className="hidden md:block" />
         </div>
       </header>
     </div>

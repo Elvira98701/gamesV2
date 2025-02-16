@@ -14,7 +14,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({ className }) => {
         className="absolute left-2 top-1/2 -translate-y-1/2 text-zinc-500"
         size={18}
       />
-      <Input type="search" />
+      <Input type="search" className="pl-8" />
     </div>
   );
 };
