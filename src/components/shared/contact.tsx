@@ -65,7 +65,7 @@ export const Contact: React.FC = () => {
                   onMouseLeave={handleMouseLeave}
                   onMouseUp={handleMouseLeave}
                   onMouseEnter={handleMouseLeave}
-                  src="/images/contact.jpg"
+                  src="/images/contact.avif"
                   alt=""
                   className="object-cover object-top"
                   loading="lazy"

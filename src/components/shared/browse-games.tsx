@@ -9,7 +9,7 @@ export const BrowseGames: React.FC = () => {
           It's easy{" "}
           <span className="animated-span inline-block h-8 w-8 md:h-16 md:w-16 bg-foreground rounded-lg">
             <img
-              src="/images/1.jpg"
+              src="/images/1.avif"
               alt=""
               className="animated-img rounded-lg"
               loading="lazy"
@@ -18,7 +18,7 @@ export const BrowseGames: React.FC = () => {
           and fast to find the right game, read{" "}
           <span className="animated-span inline-block h-8 w-8 md:h-16 md:w-16 bg-foreground rounded-lg">
             <img
-              src="/images/2.jpg"
+              src="/images/2.avif"
               alt=""
               className="animated-img rounded-lg"
               loading="lazy"
@@ -27,7 +27,7 @@ export const BrowseGames: React.FC = () => {
           the description and see the{" "}
           <span className="animated-span inline-block h-8 w-8 md:h-16 md:w-16 bg-foreground rounded-lg">
             <img
-              src="/images/3.jpg"
+              src="/images/3.avif"
               alt=""
               className="animated-img rounded-lg"
               loading="lazy"

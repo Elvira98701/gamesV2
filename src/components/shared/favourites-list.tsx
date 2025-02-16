@@ -31,18 +31,28 @@ export const FavouritesList: React.FC<FavouritesListProps> = ({
       <Container>
         {favourites.length > 0 ? (
           <>
-            <div className="grid grid-cols-5 gap-5 mt-20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
               {favourites.map((game) => (
-                <GameCard key={game.id} game={game} />
+                <GameCard
+                  key={game.id}
+                  game={game}
+                  className="border border-zinc-900"
+                />
               ))}
             </div>
-            <div className="flex items-center justify-center py-10">
-              <Button onClick={handleClearFavourites}>Clear all</Button>
+            <div className="pt-7 flex justify-center">
+              <Button
+                className="bg-primary"
+                onClick={handleClearFavourites}
+                variant="secondary"
+              >
+                Clear all
+              </Button>
             </div>
           </>
         ) : (
-          <div className="min-h-40 flex justify-center items-center">
-            <p className="flex items-center gap-2 text-lg">
+          <div className="min-h-40 flex justify-center items-center rounded-xl border border-zinc-900">
+            <p className="flex items-center gap-2 text-lg text-background">
               <Frown />
               No games found. Add{" "}
               <Link className="underline" to={pageConfig.games}>
