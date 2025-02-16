@@ -9,11 +9,7 @@ import {
   SelectValue,
 } from "../ui/select";
 
-interface SortProps {
-  className?: string;
-}
-
-export const Sort: React.FC<SortProps> = ({ className }) => {
+export const Sort: React.FC = () => {
   return (
     <Select>
       <SelectTrigger className="w-[180px]">
