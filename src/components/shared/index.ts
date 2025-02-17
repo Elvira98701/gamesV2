@@ -1,6 +1,8 @@
 export { BentoCard } from "./bento-card";
 export { BentoTilt } from "./bento-tilt";
 export { BrowseGames } from "./browse-games";
+export { ContactDialog } from "./contact-dialog";
+export { ContactForm } from "./contact-form";
 export { Contact } from "./contact";
 export { Container } from "./container";
 export { Developers } from "./developers";

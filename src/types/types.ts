@@ -93,6 +93,16 @@ export type PlatfromsResponse = z.infer<typeof platformsResponseSchema>;
 export type Developer = z.infer<typeof developerSchema>;
 export type DevelopersResponse = z.infer<typeof developersResponseSchema>;
 
+export const formSchema = z.object({
+  username: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+  email: z.string().email("Enter the correct email address."),
+  message: z.string().min(5, "The message must be at least 5 characters long."),
+});
+
+export type ContactFormValues = z.infer<typeof formSchema>;
+
 export interface IPageItem {
   id: number;
   href: string;

@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { useRef } from "react";
-import { Button } from "../ui";
 import { Container } from "./container";
+import { ContactDialog } from "./contact-dialog";
 
 export const Contact: React.FC = () => {
   const frameRef = useRef<HTMLImageElement>(null);
@@ -110,9 +110,7 @@ export const Contact: React.FC = () => {
             Do you have any questions, suggestions, or ideas to improve the
             service? We are always in touch!
           </p>
-          <Button className="bg-primary text-foreground" type="button">
-            Contact us
-          </Button>
+          <ContactDialog />
         </div>
       </Container>
     </section>
