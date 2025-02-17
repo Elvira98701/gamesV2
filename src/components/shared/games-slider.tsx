@@ -8,7 +8,7 @@ import {
 } from "../ui/carousel";
 import { Container } from "./container";
 import { GameCard } from "./game-card";
-import { useGetSliderGamesQuery } from "@/features/slider/gamesSliderApi";
+import { useGetSliderGamesQuery } from "@/features/games/gamesApi";
 import { Game } from "@/types/types";
 
 export const GamesSlider: React.FC = () => {

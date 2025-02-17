@@ -2,12 +2,15 @@ import React from "react";
 import { IPageItem } from "@/types/types";
 import { ButtonLink } from "./button-link";
 
-interface Props {
+interface NavigationMenuProps {
   className?: string;
   pagesList: IPageItem[];
 }
 
-export const NavigationMenu: React.FC<Props> = ({ className, pagesList }) => {
+export const NavigationMenu: React.FC<NavigationMenuProps> = ({
+  className,
+  pagesList,
+}) => {
   return (
     <nav className={className}>
       <ul className="flex justify-center items-center gap-4">

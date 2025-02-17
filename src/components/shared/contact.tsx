@@ -45,7 +45,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div id="story" className="min-h-[50vh] w-full text-background py-32">
+    <section id="contact" className="min-h-[50vh] w-full text-background py-32">
       <Container className="flex flex-col items-center">
         <p className="text-sm uppercase md:text-[10px]">
           Make our service better
@@ -59,10 +59,11 @@ export const Contact: React.FC = () => {
           <img
             src="/images/contact.avif"
             className="lg:hidden rounded-xl my-5"
+            loading="lazy"
           />
-          <div className="story-img-container hidden lg:block">
-            <div className="story-img-mask">
-              <div className="story-img-content">
+          <div className="contact-img-container hidden lg:block">
+            <div className="contact-img-mask">
+              <div className="contact-img-content">
                 <img
                   ref={frameRef}
                   onMouseMove={handleMouseMove}
@@ -114,6 +115,6 @@ export const Contact: React.FC = () => {
           </Button>
         </div>
       </Container>
-    </div>
+    </section>
   );
 };

@@ -45,6 +45,7 @@ export const FavouritesList: React.FC<FavouritesListProps> = ({
                 className="bg-primary"
                 onClick={handleClearFavourites}
                 variant="secondary"
+                type="button"
               >
                 Clear all
               </Button>

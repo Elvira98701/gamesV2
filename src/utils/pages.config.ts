@@ -2,6 +2,7 @@ interface IPageConfig {
   home: string;
   favourites: string;
   games: string;
+  game: string;
 }
 
 class PageConfig implements IPageConfig {

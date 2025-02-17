@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
       <header className="flex justify-center w-full">
         <div className="flex size-full items-center justify-between max-w-7xl p-6 min-h-20 bg-foreground text-background rounded-full border border-zinc-600">
           <Logo />
-          <MobileMenu className="md:hidden" />
+          <MobileMenu pagesList={navItems} className="md:hidden" />
           <NavigationMenu pagesList={navItems} className="hidden md:block" />
         </div>
       </header>
