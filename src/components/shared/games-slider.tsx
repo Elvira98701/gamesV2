@@ -20,6 +20,7 @@ export const GamesSlider: React.FC = () => {
 
   return (
     <section className="py-10 md:py-16 lg:py-20">
+      <h2 className="visually-hidden">Top games</h2>
       <Container className="flex justify-center">
         <Carousel
           opts={{

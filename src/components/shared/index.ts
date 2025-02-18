@@ -6,6 +6,7 @@ export { ContactForm } from "./contact-form";
 export { Contact } from "./contact";
 export { Container } from "./container";
 export { Developers } from "./developers";
+export { FavouritesHero } from "./favourites-hero";
 export { FavouritesList } from "./favourites-list";
 export { Features } from "./features";
 export { Filters } from "./filters";

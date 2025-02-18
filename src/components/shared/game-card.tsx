@@ -34,7 +34,7 @@ export const GameCard: React.FC<GameCardProps> = ({ className, game }) => {
       <CardContent className="p-0">
         <img
           src={game.background_image}
-          alt=""
+          alt={game.name}
           className="size-full h-60 object-cover"
           loading="lazy"
         />

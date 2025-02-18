@@ -36,7 +36,7 @@ export const FavouritesList: React.FC<FavouritesListProps> = ({
                 <GameCard
                   key={game.id}
                   game={game}
-                  className="border border-zinc-900"
+                  className="border border-zinc-800"
                 />
               ))}
             </div>

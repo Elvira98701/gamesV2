@@ -30,6 +30,7 @@ export const Features: React.FC = () => {
   });
   return (
     <section id="features">
+      <h2 className="visually-hidden">Features</h2>
       <Container>
         <BentoTilt className="relative mb-4 md:mb-7 h-96 w-full overflow-hidden rounded-xl md:h-[65vh] text-background">
           <BentoCard

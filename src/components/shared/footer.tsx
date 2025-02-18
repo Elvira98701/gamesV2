@@ -6,9 +6,9 @@ import { pageConfig } from "@/utils/pages.config";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-primary pt-16 pb-4 lg:pt-28 lg:pb-8 text-base lg:text-xl">
+    <footer className="bg-primary pt-16 pb-4 lg:pt-28 lg:pb-8 text-base lg:text-xl text-center md:text-left">
       <Container>
-        <div className="flex flex-col text-center items-center md:flex-row md:text-left md:items-start justify-between gap-5 mb-16 lg:mb-28">
+        <div className="flex flex-col items-center md:flex-row md:items-start justify-between gap-5 mb-16 lg:mb-28">
           <Logo className="w-20 h-20 lg:w-28 lg:h-28" />
           <div>
             <h3 className="footer-title mb-3">Explore</h3>

@@ -17,7 +17,7 @@ export const Game: React.FC = () => {
         <Container className="h-[50vh] flex justify-center gap-4 sm:gap-5">
           <BentoTilt className="rounded-xl flex-1 border border-zinc-800">
             <div className="flex size-full flex-col justify-center bg-foreground text-background p-5">
-              <h3>{data?.name}</h3>
+              <h1 className="title-small">{data?.name}</h1>
               <Logo className="absolute right-5 bottom-5 w-16 h-16" />
             </div>
           </BentoTilt>
@@ -32,7 +32,7 @@ export const Game: React.FC = () => {
 
       <section className="py-28">
         <Container>
-          <h2 className="text-center">
+          <h2 className="text-center mb-10">
             Game <br /> details
           </h2>
           <div className="flex items-start gap-7 max-w-screen-xl mx-auto">

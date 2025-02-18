@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BrowseGames,
   Contact,
@@ -5,7 +6,6 @@ import {
   GamesSlider,
   Hero,
 } from "@/components/shared";
-import React from "react";
 
 export const Home: React.FC = () => {
   return (
