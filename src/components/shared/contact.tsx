@@ -2,11 +2,15 @@ import gsap from "gsap";
 import { useRef } from "react";
 import { Container } from "./container";
 import { ContactDialog } from "./contact-dialog";
+import { useMedia } from "react-use";
 
 export const Contact: React.FC = () => {
   const frameRef = useRef<HTMLImageElement>(null);
+  const isWide = useMedia("(min-width: 1050px)");
 
   const handleMouseMove = (e: React.MouseEvent<HTMLImageElement>) => {
+    if (!isWide) return;
+
     const { clientX, clientY } = e;
     const element = frameRef.current;
 
@@ -32,6 +36,8 @@ export const Contact: React.FC = () => {
   };
 
   const handleMouseLeave = () => {
+    if (!isWide) return;
+
     const element = frameRef.current;
 
     if (element) {
@@ -45,7 +51,10 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="min-h-[50vh] w-full text-background py-32">
+    <section
+      id="contact"
+      className="min-h-[50vh] w-full text-background py-16 lg:py-32"
+    >
       <Container className="flex flex-col items-center">
         <p className="text-sm uppercase md:text-[10px]">
           Make our service better
@@ -56,54 +65,56 @@ export const Contact: React.FC = () => {
             We will be glad <br /> to hear your <br /> opinion.
           </h3>
 
-          <img
-            src="/images/contact.avif"
-            className="lg:hidden rounded-xl my-5"
-            loading="lazy"
-          />
-          <div className="contact-img-container hidden lg:block">
-            <div className="contact-img-mask">
-              <div className="contact-img-content">
-                <img
-                  ref={frameRef}
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}
-                  onMouseUp={handleMouseLeave}
-                  onMouseEnter={handleMouseLeave}
-                  src="/images/contact.avif"
-                  alt=""
-                  className="object-cover object-top"
-                  loading="lazy"
-                />
+          {isWide ? (
+            <div className="contact-img-container">
+              <div className="contact-img-mask">
+                <div className="contact-img-content">
+                  <img
+                    ref={frameRef}
+                    onMouseMove={handleMouseMove}
+                    onMouseLeave={handleMouseLeave}
+                    onMouseUp={handleMouseLeave}
+                    onMouseEnter={handleMouseLeave}
+                    src="/images/contact.avif"
+                    alt=""
+                    className="object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
               </div>
+              <svg
+                className="invisible absolute size-0"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <filter id="flt_tag">
+                    <feGaussianBlur
+                      in="SourceGraphic"
+                      stdDeviation="8"
+                      result="blur"
+                    />
+                    <feColorMatrix
+                      in="blur"
+                      mode="matrix"
+                      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                      result="flt_tag"
+                    />
+                    <feComposite
+                      in="SourceGraphic"
+                      in2="flt_tag"
+                      operator="atop"
+                    />
+                  </filter>
+                </defs>
+              </svg>
             </div>
-
-            <svg
-              className="invisible absolute size-0"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <filter id="flt_tag">
-                  <feGaussianBlur
-                    in="SourceGraphic"
-                    stdDeviation="8"
-                    result="blur"
-                  />
-                  <feColorMatrix
-                    in="blur"
-                    mode="matrix"
-                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                    result="flt_tag"
-                  />
-                  <feComposite
-                    in="SourceGraphic"
-                    in2="flt_tag"
-                    operator="atop"
-                  />
-                </filter>
-              </defs>
-            </svg>
-          </div>
+          ) : (
+            <img
+              src="/images/contact.avif"
+              className="rounded-xl my-5"
+              loading="lazy"
+            />
+          )}
         </div>
         <div className="lg:-mt-32 ml-auto max-w-96 relative z-10">
           <p className="pb-5 text-sm">

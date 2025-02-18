@@ -1,4 +1,5 @@
 import { GameCard, GamesPagination } from "@/components/shared";
+import { CardSkeleton } from "@/components/ui";
 import {
   selectSelectedDevelopers,
   selectSelectedGenres,
@@ -23,7 +24,7 @@ export const GamesList: React.FC = () => {
   let content: React.ReactNode;
 
   if (isLoading) {
-    content = <p>loading</p>;
+    content = Array.from({ length: 16 }, (_, i) => <CardSkeleton key={i} />);
   } else if (isSuccess) {
     const games: Game[] = (data && data.results) || [];
     content = games.map((game) => <GameCard key={game.id} game={game} />);
@@ -33,8 +34,10 @@ export const GamesList: React.FC = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-4 gap-4 mb-4">{content}</div>
-      <div className="p-4 border rounded-2xl">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-flow-row gap-4 mb-4">
+        {content}
+      </div>
+      <div className="p-2 sm:p-4 border rounded-2xl">
         <GamesPagination />
       </div>
     </div>

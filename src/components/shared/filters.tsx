@@ -27,12 +27,16 @@ export const Filters: React.FC<FiltersProps> = ({ className }) => {
       <Genres className="mb-5" />
       <Platforms className="mb-5" />
       <Developers className="mb-5" />
-      <div className="flex gap-2 justify-center items-center">
-        <Button className="flex-1" type="button" onClick={handleApplyFilters}>
+      <div className="flex flex-col gap-2 justify-center items-center">
+        <Button
+          className="flex-1 w-full"
+          type="button"
+          onClick={handleApplyFilters}
+        >
           Apply
         </Button>
         <Button
-          className="flex-1"
+          className="flex-1 w-full"
           type="button"
           variant="outline"
           onClick={handleResetFilters}

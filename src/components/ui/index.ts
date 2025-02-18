@@ -1,5 +1,6 @@
 export { ButtonLink } from "./button-link";
 export { Button } from "./button";
+export { CardSkeleton } from "./card-skeleton";
 export { Card } from "./card";
 export { Carousel } from "./carousel";
 export { Checkbox } from "./checkbox";

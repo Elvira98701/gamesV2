@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel } from "../ui";
+import { CardSkeleton, Carousel } from "../ui";
 import {
   CarouselContent,
   CarouselItem,
@@ -14,13 +14,12 @@ import { Game } from "@/types/types";
 export const GamesSlider: React.FC = () => {
   const { data, error, isLoading } = useGetSliderGamesQuery();
 
-  if (isLoading) return <p>Загрузка слайдера...</p>;
-  if (error) return <p>Ошибка загрузки слайдера</p>;
+  if (error) return <p>{error.toString()}</p>;
 
   const games: Game[] = (data && data.results) || [];
 
   return (
-    <section className="py-20">
+    <section className="py-10 md:py-16 lg:py-20">
       <Container className="flex justify-center">
         <Carousel
           opts={{
@@ -29,13 +28,24 @@ export const GamesSlider: React.FC = () => {
           className="w-5/6"
         >
           <CarouselContent>
-            {games.map((game) => (
-              <CarouselItem key={game.id} className="md:basis-1/2 lg:basis-1/4">
-                <div className="p-1 ">
-                  <GameCard game={game} />
-                </div>
-              </CarouselItem>
-            ))}
+            {isLoading
+              ? Array.from({ length: 4 }, (_, i) => (
+                  <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/4">
+                    <div className="p-1 ">
+                      <CardSkeleton />
+                    </div>
+                  </CarouselItem>
+                ))
+              : games.map((game) => (
+                  <CarouselItem
+                    key={game.id}
+                    className="md:basis-1/2 lg:basis-1/4"
+                  >
+                    <div className="p-1 ">
+                      <GameCard game={game} />
+                    </div>
+                  </CarouselItem>
+                ))}
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
