@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
             className="object-cover object-right-bottom size-full rounded-3xl"
           />
         </div>
-        <div className="absolute bottom-28 xl:bottom-1/2 xl:translate-y-1/2 left-0 w-full">
+        <div className="absolute bottom-20 xl:bottom-1/2 xl:translate-y-1/2 left-0 w-full">
           <Container className="text-background xl:text-foreground">
             <h1>
               {"GameFinder".split("").map((word, idx) => (
@@ -56,12 +56,11 @@ export const Hero: React.FC = () => {
               ))}
             </h1>
             <p className="max-w-screen-md pt-2 pb-4 text-sm sm:text-base">
-              GameFinder is a convenient service for searching games by genre,
-              platform, popularity, and other criteria. Find out information
-              about your favorite games, find new projects, and sort the results
-              by rating and release date. Simple navigation, detailed flashcards
-              and user-friendly filters will make the search for the perfect
-              game fast and enjoyable!
+              <b>GameFinder</b> is a convenient service for searching games by
+              genre, platform, popularity, and other criteria. Find out
+              information about games, find new projects, and sort the results.
+              Simple navigation, detailed flashcards and user-friendly filters
+              will make the search for the perfect game fast and enjoyable!
             </p>
             <ButtonLink
               href="/games"
