@@ -29,19 +29,19 @@ export const Hero: React.FC = () => {
   });
 
   return (
-    <section className="relative h-screen w-full p-4 lg:p-7 overflow-x-hidden rounded-2xl">
+    <section className="relative h-screen w-full lg:p-7 overflow-x-hidden rounded-2xl">
       <div
         className="relative z-10 h-full w-full overflow-hidden rounded-3xl bg-foreground will-change-auto"
         id="video-frame"
       >
-        <div className="absolute left-0 top-0 w-full h-2/3 lg:size-full overflow-hidden">
+        <div className="absolute left-0 top-0 w-full h-2/3 lg:size-full overflow-hidden p-4">
           <video
             src="/video/video1.mp4"
             loop
             muted
             autoPlay
             playsInline
-            className="object-cover object-right-bottom size-full"
+            className="object-cover object-right-bottom size-full rounded-3xl"
           />
         </div>
         <div className="absolute bottom-10 md:bottom-14 xl:bottom-1/2 xl:translate-y-1/2 left-0 w-full">

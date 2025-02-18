@@ -52,7 +52,7 @@ export const FavouritesList: React.FC<FavouritesListProps> = ({
             </div>
           </>
         ) : (
-          <div className="min-h-40 flex justify-center items-center rounded-xl border border-zinc-900">
+          <div className="min-h-40 flex justify-center items-center rounded-xl border border-zinc-800">
             <p className="flex items-center gap-2 text-lg text-background">
               <Frown />
               No games found. Add{" "}
