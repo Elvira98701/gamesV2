@@ -65,6 +65,8 @@
   }
   body {
     @apply bg-background text-foreground font-normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html,
@@ -180,7 +182,7 @@ h3,
   padding: 0 !important;
   white-space: nowrap !important;
   -webkit-clip-path: inset(100%) !important;
-          clip-path: inset(100%) !important;
+  clip-path: inset(100%) !important;
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }
