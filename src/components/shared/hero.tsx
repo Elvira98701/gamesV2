@@ -29,9 +29,9 @@ export const Hero: React.FC = () => {
   });
 
   return (
-    <section className="relative h-screen w-full lg:p-7 overflow-x-hidden rounded-2xl">
+    <section className="relative h-screen w-full lg:p-7 overflow-x-hidden">
       <div
-        className="relative z-10 h-full w-full overflow-hidden rounded-3xl bg-foreground will-change-auto"
+        className="relative z-10 h-full w-full overflow-hidden rounded-b-3xl lg:rounded-3xl bg-foreground will-change-auto"
         id="video-frame"
       >
         <div className="absolute left-0 top-0 w-full h-2/3 lg:size-full overflow-hidden p-4">
