@@ -26,7 +26,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         <DropdownMenuTrigger className="flex justify-center items-center">
           <Ellipsis />
         </DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuContent className="rounded-2xl">
           <DropdownMenuLabel>Menu</DropdownMenuLabel>
           <DropdownMenuSeparator />
           {pagesList.map((page) => (
