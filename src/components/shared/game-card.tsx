@@ -46,7 +46,7 @@ export const GameCard: React.FC<GameCardProps> = ({ className, game }) => {
             </span>
           </div>
 
-          <div className="flex items-center justify-center gap-1 absolute bottom-6 left-0 w-full">
+          <div className="flex items-center justify-center gap-2 absolute bottom-6 left-0 w-full">
             <ButtonLink href={`/game/${game.id}`} variant="secondary">
               Show more
             </ButtonLink>
