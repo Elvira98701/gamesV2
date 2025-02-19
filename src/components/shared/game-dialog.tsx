@@ -21,7 +21,9 @@ export const GameDialog: React.FC<GameDialogProps> = ({ description }) => {
         <DialogHeader>
           <DialogTitle className="text-3xl font-normal">About</DialogTitle>
         </DialogHeader>
-        <p>{description}</p>
+        <div className="max-h-96 overflow-y-auto p-2">
+          <p>{description}</p>
+        </div>
       </DialogContent>
     </Dialog>
   );
