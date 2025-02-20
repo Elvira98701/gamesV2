@@ -8,6 +8,9 @@ interface FilterState {
   selectedGenres: number[];
   selectedPlatforms: number[];
   selectedDevelopers: number[];
+  currentPage: number;
+  searchValue: string;
+  order: string;
 }
 
 const initialState: FilterState = {
@@ -17,6 +20,9 @@ const initialState: FilterState = {
   selectedGenres: [],
   selectedPlatforms: [],
   selectedDevelopers: [],
+  currentPage: 1,
+  searchValue: "",
+  order: "",
 };
 
 const filterSlice = createSlice({
@@ -48,6 +54,15 @@ const filterSlice = createSlice({
       state.tempPlatforms = [];
       state.tempDevelopers = [];
     },
+    setCurrentPage(state, action: PayloadAction<number>) {
+      state.currentPage = action.payload;
+    },
+    setSearchValue(state, action: PayloadAction<string>) {
+      state.searchValue = action.payload;
+    },
+    setOrder(state, action: PayloadAction<string>) {
+      state.order = action.payload;
+    },
   },
 });
 
@@ -57,6 +72,9 @@ export const {
   toggleDeveloper,
   applyFilters,
   resetFilters,
+  setCurrentPage,
+  setSearchValue,
+  setOrder,
 } = filterSlice.actions;
 
 export default filterSlice.reducer;
@@ -73,3 +91,6 @@ export const selectSelectedPlatforms = (state: RootState) =>
   state.filter.selectedPlatforms;
 export const selectSelectedDevelopers = (state: RootState) =>
   state.filter.selectedDevelopers;
+export const selectCurrentPage = (state: RootState) => state.filter.currentPage;
+export const selectSearchValue = (state: RootState) => state.filter.searchValue;
+export const selectOrder = (state: RootState) => state.filter.order;

@@ -8,21 +8,36 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { useAppDispatch, useAppSelector } from "@/features/hooks";
+import { selectOrder, setOrder } from "@/features/filter/filterSlice";
+
+const sortList = [
+  { id: 1, name: "-added", title: "Popularity" },
+  { id: 2, name: "name", title: "Name" },
+  { id: 3, name: "-rating", title: "Rating" },
+];
 
 export const Sort: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const order = useAppSelector(selectOrder);
+
+  const handleChangeOrder = (value: string) => {
+    dispatch(setOrder(value));
+  };
+
   return (
-    <Select>
+    <Select value={order} onValueChange={handleChangeOrder}>
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Sort by:" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Sorting</SelectLabel>
-          <SelectItem value="apple">Apple</SelectItem>
-          <SelectItem value="banana">Banana</SelectItem>
-          <SelectItem value="blueberry">Blueberry</SelectItem>
-          <SelectItem value="grapes">Grapes</SelectItem>
-          <SelectItem value="pineapple">Pineapple</SelectItem>
+          {sortList.map(({ id, name, title }) => (
+            <SelectItem key={id} value={name}>
+              {title}
+            </SelectItem>
+          ))}
         </SelectGroup>
       </SelectContent>
     </Select>

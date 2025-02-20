@@ -13,6 +13,9 @@ interface IParams {
   genres: number[];
   platforms: number[];
   developers: number[];
+  page: number;
+  search: string;
+  order: string;
 }
 
 export const gamesApi = createApi({
@@ -20,7 +23,7 @@ export const gamesApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: (builder) => ({
     getGames: builder.query<GamesResponse, IParams>({
-      query: ({ genres, platforms, developers }) => {
+      query: ({ genres, platforms, developers, page, search, order }) => {
         const genreParams = genres.length ? `&genres=${genres.join(",")}` : "";
         const platformParams = platforms.length
           ? `&platforms=${platforms.join(",")}`
@@ -28,10 +31,13 @@ export const gamesApi = createApi({
         const developersParams = developers.length
           ? `&developers=${developers.join(",")}`
           : "";
+        const pageParams = `&page=${page}`;
+        const searchParams = search.length ? `&search=${search}` : "";
+        const orderParams = order.length ? `&ordering=${order}` : "";
 
         return `/games?key=${
           import.meta.env.VITE_API_KEY
-        }&page_size=16${genreParams}${platformParams}${developersParams}`;
+        }&page_size=12${genreParams}${platformParams}${developersParams}${pageParams}${searchParams}${orderParams}`;
       },
     }),
     getSliderGames: builder.query<GamesResponse, void>({

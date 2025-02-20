@@ -27,7 +27,7 @@ export const GameHero: React.FC<GameHeroProps> = ({ game }) => {
 
   return (
     <section className="pb-4 pt-7 md:py-7 overflow-hidden">
-      <Container className="h-[50vh] flex flex-col-reverse sm:flex-row justify-center gap-4 md:gap-7">
+      <Container className="h-[80vh] sm:h-[50vh] flex flex-col-reverse sm:flex-row justify-center gap-4 md:gap-7">
         <BentoTilt className="relative rounded-xl flex-1 bg-cover bg-center flex flex-col justify-end items-end">
           <img src={game.background_image} className="object-cover size-full" />
           <div className="absolute bottom-5 left-5 flex items-center gap-2">

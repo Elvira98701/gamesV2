@@ -5,7 +5,12 @@ import { Platforms } from "./platforms";
 import { Developers } from "./developers";
 import { Button } from "../ui";
 import { useAppDispatch } from "@/features/hooks";
-import { applyFilters, resetFilters } from "@/features/filter/filterSlice";
+import {
+  applyFilters,
+  resetFilters,
+  setCurrentPage,
+  setSearchValue,
+} from "@/features/filter/filterSlice";
 
 interface FiltersProps {
   className?: string;
@@ -20,6 +25,8 @@ export const Filters: React.FC<FiltersProps> = ({ className }) => {
 
   const handleApplyFilters = () => {
     dispatch(applyFilters());
+    dispatch(setCurrentPage(1));
+    dispatch(setSearchValue(""));
   };
 
   return (

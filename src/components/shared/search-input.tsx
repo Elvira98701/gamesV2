@@ -1,20 +1,43 @@
-import React from "react";
-import { Input } from "../ui";
+import React, { useEffect, useState } from "react";
+import { Button, Input } from "../ui";
 import { cn } from "@/lib/utils";
 import { Search } from "lucide-react";
+import { useAppDispatch, useAppSelector } from "@/features/hooks";
+import {
+  selectSearchValue,
+  setCurrentPage,
+  setSearchValue,
+} from "@/features/filter/filterSlice";
 
 interface SearchInputProps {
   className?: string;
 }
 
 export const SearchInput: React.FC<SearchInputProps> = ({ className }) => {
+  const dispatch = useAppDispatch();
+  const searchValue = useAppSelector(selectSearchValue);
+  const [inputValue, setInputValue] = useState(searchValue);
+
+  const handleSearch = () => {
+    dispatch(setSearchValue(inputValue));
+    dispatch(setCurrentPage(1));
+  };
+
+  useEffect(() => {
+    setInputValue(searchValue);
+  }, [searchValue]);
+
   return (
-    <div className={cn("relative w-full", className)}>
-      <Search
-        className="absolute left-2 top-1/2 -translate-y-1/2 text-zinc-500"
-        size={18}
+    <div className={cn("w-full flex gap-1", className)}>
+      <Input
+        type="search"
+        value={inputValue}
+        onChange={(event) => setInputValue(event.target.value)}
+        placeholder="Search for games..."
       />
-      <Input type="search" className="pl-8" />
+      <Button className="rounded-lg" variant="secondary" onClick={handleSearch}>
+        <Search size={18} />
+      </Button>
     </div>
   );
 };

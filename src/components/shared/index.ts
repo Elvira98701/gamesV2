@@ -9,6 +9,7 @@ export { Developers } from "./developers";
 export { FavouritesHero } from "./favourites-hero";
 export { FavouritesList } from "./favourites-list";
 export { Features } from "./features";
+export { FilterDialog } from "./filter-dialog";
 export { Filters } from "./filters";
 export { Footer } from "./footer";
 export { GameCard } from "./game-card";
