@@ -13,6 +13,7 @@ interface GameDetailsProps {
   rating: number;
   platforms: Game["platforms"];
   playtime: number;
+  image: string | null;
 }
 
 export const GameDetails: React.FC<GameDetailsProps> = ({
@@ -20,6 +21,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
   rating,
   platforms,
   playtime,
+  image,
 }) => {
   const platformsRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLLIElement | null)[]>([]);
@@ -54,8 +56,11 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
           <div className="flex-1">
             <div className="relative bg-foreground text-background min-h-80 p-5 rounded-xl overflow-hidden border border-zinc-800 mb-10">
               <h3 className="text-2xl">
-                Released <span>{released}</span>
+                Released: <span>{released}</span>
               </h3>
+              {playtime > 0 && (
+                <h3 className="text-2xl">Playtime: {playtime} hours</h3>
+              )}
               <video
                 src="/video/card-1.webm"
                 loop
@@ -96,11 +101,11 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
                 ))}
               </ul>
             </div>
-            {playtime > 0 && (
-              <div className="relative bg-primary min-h-80 p-5 rounded-xl overflow-hidden text-foreground">
-                <h3 className="text-3xl">Playtime:</h3>
-                <span className="big-text">{playtime} hours</span>
-              </div>
+            {image && (
+              <div
+                className="min-h-96 bg-cover bg-center rounded-xl "
+                style={{ backgroundImage: `url(${image})` }}
+              ></div>
             )}
           </div>
         </div>

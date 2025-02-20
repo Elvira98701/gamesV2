@@ -18,7 +18,12 @@ export const Developers: React.FC<DevelopersProps> = ({ className }) => {
   const [showAll, setShowAll] = useState(false);
   const { data, error, isLoading } = useGetDevelopersQuery();
 
-  if (error) return <p>{error.toString()}</p>;
+  if (error)
+    return (
+      <p className="text-red-600 py-4">
+        Failed to load Developers. Please try again later.
+      </p>
+    );
 
   const developers: Developer[] = (data && data.results) || [];
   const developersItems = showAll ? developers : developers.slice(0, 6);

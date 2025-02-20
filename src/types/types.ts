@@ -17,6 +17,7 @@ export const gameSchema = z.object({
 });
 
 export const gameDetailsSchema = gameSchema.extend({
+  background_image_additional: z.string().url().nullable(),
   description_raw: z.string(),
   playtime: z.number(),
   movies_count: z.number(),

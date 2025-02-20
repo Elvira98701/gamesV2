@@ -18,7 +18,12 @@ export const Platforms: React.FC<PlatformsProps> = ({ className }) => {
   const [showAll, setShowAll] = useState(false);
   const { data, error, isLoading } = useGetPlatformsQuery();
 
-  if (error) return <p>{error.toString()}</p>;
+  if (error)
+    return (
+      <p className="text-red-600 py-4">
+        Failed to load Platforms. Please try again later.
+      </p>
+    );
 
   const platforms: Platform[] = (data && data.results) || [];
   const platformsItems = showAll

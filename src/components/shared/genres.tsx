@@ -15,7 +15,12 @@ export const Genres: React.FC<GenresProps> = ({ className }) => {
   const tempGenres = useAppSelector(selectTempGenres);
   const { data, error, isLoading } = useGetGenresQuery();
 
-  if (error) return <p>{error.toString()}</p>;
+  if (error)
+    return (
+      <p className="text-red-600 py-4">
+        Failed to load Genres. Please try again later.
+      </p>
+    );
 
   const genres: Genre[] = (data && data.results) || [];
   const genresItems = showAll ? genres : genres.slice(0, 6);

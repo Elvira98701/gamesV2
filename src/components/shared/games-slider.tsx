@@ -14,7 +14,12 @@ import { Game } from "@/types/types";
 export const GamesSlider: React.FC = () => {
   const { data, error, isLoading } = useGetSliderGamesQuery();
 
-  if (error) return <p>{error.toString()}</p>;
+  if (error)
+    return (
+      <div className="text-center py-4 text-red-600">
+        Failed to load games slider. Please try again later.
+      </div>
+    );
 
   const games: Game[] = (data && data.results) || [];
 
