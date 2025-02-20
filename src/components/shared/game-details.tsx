@@ -55,11 +55,17 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-start gap-10 max-w-screen-xl mx-auto my-10">
           <div className="flex-1">
             <div className="relative bg-foreground text-background min-h-80 p-5 rounded-xl overflow-hidden border border-zinc-800 mb-10">
-              <h3 className="text-2xl">
-                Released: <span>{released}</span>
+              <h3 className="text-xl">
+                Released:{" "}
+                <span className="text-3xl text-violet-300">{released}</span>
               </h3>
               {playtime > 0 && (
-                <h3 className="text-2xl">Playtime: {playtime} hours</h3>
+                <h3 className="text-xl">
+                  Playtime:{" "}
+                  <span className="text-3xl text-violet-300">
+                    {playtime} hours
+                  </span>
+                </h3>
               )}
               <video
                 src="/video/card-1.webm"
@@ -88,7 +94,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
           </div>
           <div className="flex-1">
             <div className="rounded-xl max-w-96 mb-10" ref={platformsRef}>
-              <h3 className="text-2xl">Platforms:</h3>
+              <h3 className="text-xl">Platforms:</h3>
               <ul>
                 {platforms.map((platform, index) => (
                   <li
