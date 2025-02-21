@@ -4,6 +4,7 @@ import favouritesReducer from "@/features/favourites/favouritesSlice";
 import filterReducer from "@/features/filter/filterSlice";
 
 import { gamesApi } from "./games/gamesApi";
+import { favouritesMiddleware } from "./favourites/favouritesMiddleware";
 
 export const store = configureStore({
   reducer: {
@@ -12,7 +13,9 @@ export const store = configureStore({
     [gamesApi.reducerPath]: gamesApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(gamesApi.middleware),
+    getDefaultMiddleware()
+      .concat(gamesApi.middleware)
+      .concat(favouritesMiddleware),
 });
 
 export type AppStore = typeof store;

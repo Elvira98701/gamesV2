@@ -91,6 +91,7 @@ export const selectSelectedPlatforms = (state: RootState) =>
   state.filter.selectedPlatforms;
 export const selectSelectedDevelopers = (state: RootState) =>
   state.filter.selectedDevelopers;
+
 export const selectCurrentPage = (state: RootState) => state.filter.currentPage;
 export const selectSearchValue = (state: RootState) => state.filter.searchValue;
 export const selectOrder = (state: RootState) => state.filter.order;

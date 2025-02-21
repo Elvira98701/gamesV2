@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
-import { Container } from "./container";
-import { Game } from "@/types/types";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { cn } from "@/lib/utils";
+import { Container } from "./container";
+import { Game } from "@/types/types";
 
 gsap.registerPlugin(ScrollTrigger);
 

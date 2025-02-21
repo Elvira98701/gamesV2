@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-
+import { useMedia } from "react-use";
 import {
   Container,
   FilterDialog,
@@ -8,7 +8,6 @@ import {
   SearchInput,
   Sort,
 } from "@/components/shared";
-import { useMedia } from "react-use";
 
 export const Games: React.FC = () => {
   const isWide = useMedia("(min-width: 768px)");

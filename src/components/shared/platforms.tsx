@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import { useGetPlatformsQuery } from "@/features/games/gamesApi";
 import { Platform } from "@/types/types";
-import React, { useState } from "react";
 import { Button, Checkbox, FilterSkeleton, Label } from "../ui";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import {

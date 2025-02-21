@@ -1,4 +1,5 @@
 import React from "react";
+import { cn } from "@/lib/utils";
 import { Container } from "./container";
 import { BentoTilt } from "./bento-tilt";
 import { Button, Logo } from "../ui";
@@ -9,7 +10,6 @@ import {
   selectFavourites,
 } from "@/features/favourites/favouritesSlice";
 import { GameDetails } from "@/types/types";
-import { cn } from "@/lib/utils";
 import { GameDialog } from "./game-dialog";
 
 interface GameHeroProps {

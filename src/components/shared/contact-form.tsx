@@ -1,7 +1,8 @@
 import React from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { cn } from "@/lib/utils";
 import { formSchema } from "@/types/types";
 import { Button, Form, Input, Textarea } from "../ui";
 import {
@@ -11,7 +12,6 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
-import { cn } from "@/lib/utils";
 
 interface ContactFormProps {
   className?: string;

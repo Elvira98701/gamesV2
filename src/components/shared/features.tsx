@@ -28,6 +28,7 @@ export const Features: React.FC = () => {
       },
     });
   });
+
   return (
     <section id="features">
       <h2 className="visually-hidden">Features</h2>

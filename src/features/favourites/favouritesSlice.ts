@@ -2,7 +2,17 @@ import { Game } from "@/types/types";
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-const initialState: Game[] = [];
+const loadFromLocalStorage = (): Game[] => {
+  try {
+    const savedFavourites = localStorage.getItem("favourites");
+    return savedFavourites ? JSON.parse(savedFavourites) : [];
+  } catch (err) {
+    console.error("Error loading data from localStorage:", err);
+    return [];
+  }
+};
+
+const initialState: Game[] = loadFromLocalStorage();
 
 const favouritesSlice = createSlice({
   name: "favourites",
