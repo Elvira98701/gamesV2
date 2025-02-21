@@ -1,8 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "./container";
-import { BentoTilt } from "./bento-tilt";
-import { Button, Logo } from "../ui";
+import { Button } from "../ui";
 import { Heart } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import {
@@ -26,33 +25,34 @@ export const GameHero: React.FC<GameHeroProps> = ({ game }) => {
   };
 
   return (
-    <section className="pb-4 pt-7 md:py-7 overflow-hidden">
-      <Container className="h-[80vh] sm:h-[50vh] flex flex-col-reverse sm:flex-row justify-center gap-4 md:gap-7">
-        <BentoTilt className="relative rounded-xl flex-1 bg-cover bg-center flex flex-col justify-end items-end">
-          <img src={game.background_image} className="object-cover size-full" />
-          <div className="absolute bottom-5 left-5 flex items-center gap-2">
-            <Button
-              size="icon"
-              variant="default"
-              type="button"
-              title="add to favourites"
-              onClick={handleToggleFavourites}
-            >
-              <Heart
-                className={cn(
-                  existingIndex !== -1 && "fill-red-700 stroke-red-700"
-                )}
-              />
-            </Button>
-            <GameDialog description={game.description_raw} />
+    <section className="pb-4 pt-7 md:py-12">
+      <Container>
+        <div className="rounded-3xl overflow-hidden">
+          <div className="min-h-[80vh] flex size-full flex-col gap-4 justify-end text-background p-5 relative">
+            <h1 className="title-small z-10 relative max-w-max bg-foreground px-2 rounded-lg">
+              {game.name}
+            </h1>
+            <div className="flex items-center gap-2 z-10 relative">
+              <GameDialog description={game.description_raw} />
+              <Button
+                size="icon"
+                type="button"
+                title="add to favourites"
+                onClick={handleToggleFavourites}
+              >
+                <Heart
+                  className={cn(
+                    existingIndex !== -1 && "fill-red-700 stroke-red-700"
+                  )}
+                />
+              </Button>
+            </div>
+            <img
+              src={game.background_image}
+              className="object-cover object-center size-full absolute top-0 left-0"
+            />
           </div>
-        </BentoTilt>
-        <BentoTilt className="rounded-xl flex-1 border border-zinc-800">
-          <div className="flex size-full flex-col justify-center bg-foreground text-background p-5">
-            <h1 className="title-small">{game.name}</h1>
-            <Logo className="absolute right-5 bottom-5 w-16 h-16" />
-          </div>
-        </BentoTilt>
+        </div>
       </Container>
     </section>
   );
