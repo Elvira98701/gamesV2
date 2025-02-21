@@ -20,7 +20,7 @@ export const Games: React.FC = () => {
         )}
         <section className="flex-1">
           <header className="w-full rounded-2xl border mb-4 p-4 flex flex-col md:flex-row justify-between items-center gap-4">
-            <SearchInput className="max-w-80" />
+            <SearchInput className="max-w-96" />
             <div className="flex gap-1">
               <Sort />
               {!isWide && <FilterDialog />}

@@ -47,7 +47,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
   }, []);
 
   return (
-    <section className="py-16 lg:py-28" id="details">
+    <section className="pt-16 lg:pt-28" id="details">
       <Container>
         <h2 className="text-center">
           Game <br /> details
