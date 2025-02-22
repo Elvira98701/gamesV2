@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import { selectTempGenres, toggleGenre } from "@/features/filter/filterSlice";
 import { useGetGenresQuery } from "@/features/games/gamesApi";
 import { Genre } from "@/types/types";
-import { Button, Checkbox, FilterSkeleton, Label } from "../ui";
+import { Button, Checkbox, FilterSkeleton, Label } from "@/components/ui";
 
 interface GenresProps {
   className?: string;

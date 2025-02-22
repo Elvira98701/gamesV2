@@ -4,14 +4,14 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
 import { formSchema } from "@/types/types";
-import { Button, Form, Input, Textarea } from "../ui";
+import { Button, Form, Input, Textarea } from "@/components/ui";
 import {
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/form";
+} from "@/components/ui/form";
 
 interface ContactFormProps {
   className?: string;

@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { Loader } from "lucide-react";
 import { Contact, GameDetails, GameHero } from "@/components/shared";
 import { useGetGameByIdQuery } from "@/features/games/gamesApi";
-import { Loader } from "lucide-react";
 
 export const Game: React.FC = () => {
   const { id } = useParams();

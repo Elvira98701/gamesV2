@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Dialog } from "../ui";
+import { Dialog } from "@/components/ui";
 import {
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
+} from "@/components/ui/dialog";
 import { ContactForm } from "./contact-form";
 
 export const ContactDialog: React.FC = () => {

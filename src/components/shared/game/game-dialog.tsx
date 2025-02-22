@@ -1,11 +1,12 @@
 import React from "react";
-import { Dialog } from "../ui";
+import { Dialog } from "@/components/ui";
 import {
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
+} from "@/components/ui/dialog";
 
 interface GameDialogProps {
   description: string;
@@ -20,6 +21,9 @@ export const GameDialog: React.FC<GameDialogProps> = ({ description }) => {
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="text-3xl font-normal">About</DialogTitle>
+          <DialogDescription>
+            Read a detailed description of the game.
+          </DialogDescription>
         </DialogHeader>
         <div className="max-h-96 overflow-y-auto p-2">
           <p>{description}</p>

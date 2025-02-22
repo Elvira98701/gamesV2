@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { cn } from "@/lib/utils";
-import { Container } from "./container";
+import { Container } from "@/components/shared";
 import { Game } from "@/types/types";
 
 gsap.registerPlugin(ScrollTrigger);

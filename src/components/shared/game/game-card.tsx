@@ -1,6 +1,4 @@
 import React from "react";
-import { Button, ButtonLink, Card } from "../ui";
-import { CardContent } from "../ui/card";
 import { Heart, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
@@ -9,6 +7,8 @@ import {
   selectFavourites,
 } from "@/features/favourites/favouritesSlice";
 import { Game } from "@/types/types";
+import { Button, ButtonLink, Card } from "@/components/ui";
+import { CardContent } from "@/components/ui/card";
 
 interface GameCardProps {
   className?: string;

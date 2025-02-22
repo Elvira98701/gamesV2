@@ -1,13 +1,12 @@
 import React from "react";
-import { CardSkeleton, Carousel } from "../ui";
+import { CardSkeleton, Carousel } from "@/components/ui";
 import {
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../ui/carousel";
-import { Container } from "./container";
-import { GameCard } from "./game-card";
+} from "@/components/ui/carousel";
+import { Container, GameCard } from "@/components/shared";
 import { useGetSliderGamesQuery } from "@/features/games/gamesApi";
 import { Game } from "@/types/types";
 

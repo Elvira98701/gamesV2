@@ -54,8 +54,8 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
 
-    --font-family-base: "Montserrat", sans-serif;
-    --font-family-accent: "Anton", sans-serif;
+    --font-family-base: "Montserrat";
+    --font-family-accent: "Anton";
   }
 }
 
@@ -64,33 +64,20 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply font-base antialiased bg-background text-foreground font-normal;
   }
 
   html,
   body {
+    @apply w-screen overflow-x-hidden;
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--foreground)) transparent;
     scrollbar-gutter: stable;
-    width: 100vw;
-    overflow-x: hidden;
   }
-}
 
-body {
-  font-family: var(--font-family-base);
-  transition: 0.3s;
-}
-
-h1,
-h2,
-h3 {
-  line-height: 1.1;
-  font-weight: 400;
-  font-family: var(--font-family-accent);
-  text-transform: uppercase;
+  h1, h2, h3 {
+    @apply font-normal uppercase font-accent leading-[1.1];
+  }
 }
 
 h1 {
@@ -103,22 +90,17 @@ h2 {
 
 h3,
 .title-small {
+  @apply leading-[1];
   font-size: clamp(1.875rem, 1rem + 4.38vw, 6.25rem);
 }
 
 .big-text {
-  line-height: 1.1;
-  font-weight: 400;
-  font-family: var(--font-family-accent);
-  text-transform: uppercase;
+  @apply font-accent font-normal uppercase leading-[1.1];
   font-size: clamp(1.875rem, 1rem + 4.38vw, 6.25rem);
 }
 
 .middle-text {
-  line-height: 1.1;
-  font-weight: 400;
-  font-family: var(--font-family-accent);
-  text-transform: uppercase;
+  @apply font-accent font-normal uppercase leading-[1.1];
   font-size: clamp(1.875rem, 1.5rem + 1.88vw, 3.75rem);
 }
 

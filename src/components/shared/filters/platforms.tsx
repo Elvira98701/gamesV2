@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useGetPlatformsQuery } from "@/features/games/gamesApi";
 import { Platform } from "@/types/types";
-import { Button, Checkbox, FilterSkeleton, Label } from "../ui";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import {
   selectTempPlatforms,
   togglePlatform,
 } from "@/features/filter/filterSlice";
+import { Button, Checkbox, FilterSkeleton, Label } from "@/components/ui";
 
 interface PlatformsProps {
   className?: string;

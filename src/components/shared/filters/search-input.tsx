@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Button, Input } from "../ui";
 import { cn } from "@/lib/utils";
 import { Search } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
@@ -8,6 +7,7 @@ import {
   setCurrentPage,
   setSearchValue,
 } from "@/features/filter/filterSlice";
+import { Button, Input } from "@/components/ui";
 
 interface SearchInputProps {
   className?: string;

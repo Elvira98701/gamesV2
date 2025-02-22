@@ -1,5 +1,7 @@
 import React from "react";
-import { Select } from "../ui";
+import { useAppDispatch, useAppSelector } from "@/features/hooks";
+import { selectOrder, setOrder } from "@/features/filter/filterSlice";
+import { Select } from "@/components/ui";
 import {
   SelectContent,
   SelectGroup,
@@ -7,9 +9,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
-import { useAppDispatch, useAppSelector } from "@/features/hooks";
-import { selectOrder, setOrder } from "@/features/filter/filterSlice";
+} from "@/components/ui/select";
 
 const sortList = [
   { id: 1, name: "-added", title: "Popularity" },

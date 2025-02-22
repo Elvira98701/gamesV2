@@ -1,12 +1,12 @@
 import React, { lazy, Suspense, useState } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { Container } from "./container";
-import { BentoTilt } from "./bento-tilt";
-import { BentoCard } from "./bento-card";
-import { Logo } from "../ui";
-import { Link } from "react-router-dom";
+import { BentoTilt } from "./bento/bento-tilt";
+import { BentoCard } from "./bento/bento-card";
+import { Logo } from "@/components/ui";
 import { pageConfig } from "@/utils/pages.config";
 
 gsap.registerPlugin(ScrollTrigger);

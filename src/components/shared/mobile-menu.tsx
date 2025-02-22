@@ -1,5 +1,6 @@
 import React from "react";
-import { DropdownMenu } from "../ui";
+import { Link } from "react-router-dom";
+import { DropdownMenu } from "@/components/ui";
 import { Ellipsis } from "lucide-react";
 import {
   DropdownMenuContent,
@@ -7,9 +8,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import { IPageItem } from "@/types/types";
-import { Link } from "react-router-dom";
 
 interface MobileMenuProps {
   className?: string;

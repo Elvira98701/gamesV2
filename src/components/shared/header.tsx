@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useWindowScroll } from "react-use";
-import { Logo, NavigationMenu } from "../ui";
+import { Logo, NavigationMenu } from "@/components/ui";
 import { IPageItem } from "@/types/types";
 import { pageConfig } from "@/utils/pages.config";
 import { MobileMenu } from "./mobile-menu";

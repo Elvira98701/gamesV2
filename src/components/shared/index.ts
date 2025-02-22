@@ -1,27 +1,33 @@
-export { BentoCard } from "./bento-card";
-export { BentoTilt } from "./bento-tilt";
+export { BentoCard } from "./bento/bento-card";
+export { BentoTilt } from "./bento/bento-tilt";
+
+export { ContactForm } from "./contact/contact-form";
+export { Contact } from "./contact/contact";
+export { ContactDialog } from "./contact/contact-dialog";
+
+export { FavouritesHero } from "./favourites/favourites-hero";
+export { FavouritesList } from "./favourites/favourites-list";
+
+export { Developers } from "./filters/developers";
+export { FilterDialog } from "./filters/filter-dialog";
+export { Filters } from "./filters/filters";
+export { Genres } from "./filters/genres";
+export { Platforms } from "./filters/platforms";
+export { SearchInput } from "./filters/search-input";
+export { Sort } from "./filters/sort";
+
+export { GameCard } from "./game/game-card";
+export { GameDetails } from "./game/game-details";
+export { GameDialog } from "./game/game-dialog";
+export { GameHero } from "./game/game-hero";
+
+export { GamesPagination } from "./games/games-pagination";
+export { GamesSlider } from "./games/games-slider";
+
 export { BrowseGames } from "./browse-games";
-export { ContactDialog } from "./contact-dialog";
-export { ContactForm } from "./contact-form";
-export { Contact } from "./contact";
 export { Container } from "./container";
-export { Developers } from "./developers";
-export { FavouritesHero } from "./favourites-hero";
-export { FavouritesList } from "./favourites-list";
 export { Features } from "./features";
-export { FilterDialog } from "./filter-dialog";
-export { Filters } from "./filters";
 export { Footer } from "./footer";
-export { GameCard } from "./game-card";
-export { GameDetails } from "./game-details";
-export { GameDialog } from "./game-dialog";
-export { GameHero } from "./game-hero";
-export { GamesPagination } from "./games-pagination";
-export { GamesSlider } from "./games-slider";
-export { Genres } from "./genres";
 export { Header } from "./header";
 export { Hero } from "./hero";
 export { MobileMenu } from "./mobile-menu";
-export { Platforms } from "./platforms";
-export { SearchInput } from "./search-input";
-export { Sort } from "./sort";

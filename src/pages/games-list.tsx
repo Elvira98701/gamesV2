@@ -1,3 +1,6 @@
+import React, { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { Frown } from "lucide-react";
 import { GameCard, GamesPagination } from "@/components/shared";
 import { CardSkeleton } from "@/components/ui";
 import {
@@ -11,9 +14,6 @@ import {
 import { useGetGamesQuery } from "@/features/games/gamesApi";
 import { useAppSelector } from "@/features/hooks";
 import { Game } from "@/types/types";
-import { Frown } from "lucide-react";
-import React, { useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
 
 export const GamesList: React.FC = () => {
   const selectedGenres = useAppSelector(selectSelectedGenres);

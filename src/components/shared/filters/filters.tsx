@@ -1,9 +1,5 @@
-import { cn } from "@/lib/utils";
 import React from "react";
-import { Genres } from "./genres";
-import { Platforms } from "./platforms";
-import { Developers } from "./developers";
-import { Button } from "../ui";
+import { cn } from "@/lib/utils";
 import { useAppDispatch } from "@/features/hooks";
 import {
   applyFilters,
@@ -11,6 +7,10 @@ import {
   setCurrentPage,
   setSearchValue,
 } from "@/features/filter/filterSlice";
+import { Genres } from "./genres";
+import { Platforms } from "./platforms";
+import { Developers } from "./developers";
+import { Button } from "@/components/ui";
 
 interface FiltersProps {
   className?: string;

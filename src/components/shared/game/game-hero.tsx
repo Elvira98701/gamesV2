@@ -1,7 +1,5 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Container } from "./container";
-import { Button } from "../ui";
 import { Heart } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import {
@@ -9,6 +7,8 @@ import {
   selectFavourites,
 } from "@/features/favourites/favouritesSlice";
 import { GameDetails } from "@/types/types";
+import { Container } from "@/components/shared";
+import { Button } from "@/components/ui";
 import { GameDialog } from "./game-dialog";
 
 interface GameHeroProps {
@@ -28,8 +28,8 @@ export const GameHero: React.FC<GameHeroProps> = ({ game }) => {
     <section className="pb-4 pt-7 md:py-12">
       <Container>
         <div className="rounded-3xl overflow-hidden">
-          <div className="min-h-[80vh] flex size-full flex-col gap-4 justify-end text-background p-5 relative">
-            <h1 className="title-small z-10 relative max-w-max bg-foreground px-2 rounded-lg">
+          <div className="min-h-[80vh] flex size-full flex-col gap-2 sm:gap-4 justify-end text-background p-5 relative">
+            <h1 className="title-small z-10 relative max-w-max bg-foreground rounded-xl p-2">
               {game.name}
             </h1>
             <div className="flex items-center gap-2 z-10 relative">

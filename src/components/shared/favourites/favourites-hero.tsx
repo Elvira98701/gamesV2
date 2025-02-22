@@ -1,11 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Container } from "./container";
-import { BentoTilt } from "./bento-tilt";
-import { Link } from "react-router-dom";
 import { pageConfig } from "@/utils/pages.config";
-import { Logo } from "../ui";
+import { Container, BentoTilt } from "@/components/shared";
+import { Logo } from "@/components/ui";
 
 export const FavouritesHero: React.FC = () => {
   useGSAP(() => {

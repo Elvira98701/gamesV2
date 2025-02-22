@@ -1,13 +1,14 @@
 import React from "react";
-import { Dialog } from "../ui";
+import { SlidersHorizontal } from "lucide-react";
+import { Dialog } from "@/components/ui";
 import {
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
+} from "@/components/ui/dialog";
 import { Filters } from "./filters";
-import { SlidersHorizontal } from "lucide-react";
 
 export const FilterDialog: React.FC = () => {
   return (
@@ -18,6 +19,9 @@ export const FilterDialog: React.FC = () => {
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="text-3xl font-normal">Filters</DialogTitle>
+          <DialogDescription>
+            Adjust the filters to find games that suit your interests.
+          </DialogDescription>
         </DialogHeader>
         <div className="max-h-96 overflow-y-auto">
           <Filters />

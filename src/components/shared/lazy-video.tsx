@@ -1,5 +1,5 @@
 import React from "react";
-import { BentoTilt } from "./bento-tilt";
+import { BentoTilt } from "./bento/bento-tilt";
 
 const LazyVideo: React.FC = () => {
   return (

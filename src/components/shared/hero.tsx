@@ -2,7 +2,7 @@ import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import { ButtonLink } from "../ui";
+import { ButtonLink } from "@/components/ui";
 import { Container } from "./container";
 
 gsap.registerPlugin(ScrollTrigger);

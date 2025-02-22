@@ -1,7 +1,7 @@
 import React from "react";
-import { Container } from "./container";
-import { Logo } from "../ui";
 import { Link } from "react-router-dom";
+import { Container } from "./container";
+import { Logo } from "@/components/ui";
 import { pageConfig } from "@/utils/pages.config";
 
 export const Footer: React.FC = () => {

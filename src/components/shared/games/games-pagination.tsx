@@ -1,5 +1,5 @@
 import React from "react";
-import { Pagination } from "../ui";
+import { Pagination } from "@/components/ui";
 import {
   PaginationContent,
   PaginationEllipsis,
@@ -7,7 +7,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "../ui/pagination";
+} from "@/components/ui/pagination";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import {
   selectCurrentPage,

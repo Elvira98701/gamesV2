@@ -1,8 +1,9 @@
 import gsap from "gsap";
 import { useRef } from "react";
-import { Container } from "./container";
-import { ContactDialog } from "./contact-dialog";
+
 import { useMedia } from "react-use";
+import { Container } from "../container";
+import { ContactDialog } from "./contact-dialog";
 
 export const Contact: React.FC = () => {
   const frameRef = useRef<HTMLImageElement>(null);
