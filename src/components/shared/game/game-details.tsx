@@ -83,7 +83,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
               ></div>
             )}
           </div>
-          <div className="flex-1 flex justify-center xl:justify-start xl:flex-col gap-10">
+          <div className="flex-1 flex flex-col sm:flex-row justify-center xl:justify-start xl:flex-col gap-10">
             <div ref={platformsRef}>
               <h3 className="text-xl pb-3">Platforms:</h3>
               <ul>

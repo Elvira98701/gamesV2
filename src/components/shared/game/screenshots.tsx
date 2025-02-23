@@ -36,17 +36,15 @@ export const Screenshots: React.FC<ScreenshotsProps> = ({ className, id }) => {
 
   const screenshots: Screenshot[] = (data && data.results) || [];
 
-  console.log(screenshots);
-
   return (
     <div className={cn("pt-16 lg:pt-28", className)}>
       <Container>
         <h2 className="text-center mb-10">Screenshots</h2>
-        <Carousel className="w-full max-w-screen-xl max-h-[600px] mx-auto overflow-hidden">
+        <Carousel className="w-full max-w-screen-xl mx-auto">
           <CarouselContent>
             {screenshots.map((screenshot) => (
               <CarouselItem key={screenshot.id}>
-                <div className="p-1">
+                <div className="p-1 h-[500px] sm:h-[700px]">
                   <img
                     className="rounded-3xl size-full object-cover"
                     src={screenshot.image}
