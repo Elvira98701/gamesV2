@@ -31,6 +31,8 @@ export const Game: React.FC = () => {
         platforms={data.platforms}
         playtime={data.playtime}
         image={data.background_image_additional}
+        description={data.description_raw}
+        genres={data.genres}
       />
       <Contact />
     </main>

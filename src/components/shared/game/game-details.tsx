@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import gsap from "gsap";
+import { Calendar, Clock4, Grid2x2, Star } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { cn } from "@/lib/utils";
 import { Container } from "@/components/shared";
-import { Game } from "@/types/types";
+import { Game, GameDetails as Details } from "@/types/types";
+import { Button } from "@/components/ui";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,19 +13,24 @@ interface GameDetailsProps {
   released: string;
   rating: number;
   platforms: Game["platforms"];
+  genres: Details["genres"];
   playtime: number;
   image: string | null;
+  description: string;
 }
 
 export const GameDetails: React.FC<GameDetailsProps> = ({
   released,
   rating,
   platforms,
+  genres,
   playtime,
   image,
+  description,
 }) => {
   const platformsRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLLIElement | null)[]>([]);
+  const [isShowMore, setIsShowMore] = useState(false);
 
   useGSAP(() => {
     if (!platformsRef.current) return;
@@ -46,55 +52,40 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
     });
   }, []);
 
+  const shortDescription = description
+    .split(/(?<=[.!?])\s/)
+    .slice(0, 3)
+    .join(" ");
+
   return (
     <section className="pt-16 lg:pt-28" id="details">
       <Container>
-        <h2 className="text-center">
-          Game <br /> details
-        </h2>
-        <div className="flex flex-col sm:flex-row sm:items-start gap-10 max-w-screen-xl mx-auto my-10">
-          <div className="flex-1">
-            <div className="relative bg-foreground text-background min-h-80 p-5 rounded-xl overflow-hidden border border-zinc-800 mb-10">
-              <h3 className="text-xl">
-                Released:{" "}
-                <span className="text-3xl text-violet-300">{released}</span>
-              </h3>
-              {playtime > 0 && (
-                <h3 className="text-xl">
-                  Playtime:{" "}
-                  <span className="text-3xl text-violet-300">
-                    {playtime} hours
-                  </span>
-                </h3>
-              )}
-              <video
-                src="/video/card-1.webm"
-                loop
-                muted
-                autoPlay
-                playsInline
-                className="size-full object-cover object-center absolute top-0 left-0"
-              />
-            </div>
-            <div>
-              <h3 className="text-right">
-                Rating{" "}
-                <span
-                  className={cn("rating", {
-                    "text-red-600": rating >= 0 && rating < 2,
-                    "text-orange-600": rating >= 2 && rating < 3,
-                    "text-primary": rating >= 3 && rating < 4,
-                    "text-green-600": rating >= 4 && rating < 5,
-                  })}
+        <h2 className="text-center">Details</h2>
+        <div className="flex flex-col-reverse xl:flex-row gap-10 my-10">
+          <div className="max-w-4xl">
+            <div className="p-5 2xl:p-10 border border-zinc-900 rounded-xl mb-10">
+              <h3 className="text-xl pb-3">Description</h3>
+              <p>
+                {isShowMore ? description : shortDescription}
+                <Button
+                  onClick={() => setIsShowMore(!isShowMore)}
+                  variant="link"
+                  size="sm"
                 >
-                  {rating}
-                </span>
-              </h3>
+                  {!isShowMore ? "Read more" : "Hide"}
+                </Button>
+              </p>
             </div>
+            {image && (
+              <div
+                className="min-h-[500px] bg-cover bg-center rounded-xl "
+                style={{ backgroundImage: `url(${image})` }}
+              ></div>
+            )}
           </div>
-          <div className="flex-1">
-            <div className="rounded-xl max-w-96 mb-10" ref={platformsRef}>
-              <h3 className="text-xl">Platforms:</h3>
+          <div className="flex-1 flex justify-center xl:justify-start xl:flex-col gap-10">
+            <div ref={platformsRef}>
+              <h3 className="text-xl pb-3">Platforms:</h3>
               <ul>
                 {platforms.map((platform, index) => (
                   <li
@@ -107,12 +98,34 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
                 ))}
               </ul>
             </div>
-            {image && (
-              <div
-                className="min-h-96 bg-cover bg-center rounded-xl "
-                style={{ backgroundImage: `url(${image})` }}
-              ></div>
-            )}
+            <div className="rounded-xl p-5 2xl:p-10 border border-zinc-900 grid grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-xl pb-3 flex items-center gap-2">
+                  <Calendar size={18} /> Released:
+                </h3>
+                <span className="text-zinc-400">{released}</span>
+              </div>
+              <div>
+                <h3 className="text-xl pb-3 flex items-center gap-2">
+                  <Clock4 size={18} /> Playtime:
+                </h3>
+                <span className="text-zinc-400">{playtime} hours</span>
+              </div>
+              <div>
+                <h3 className="text-xl pb-3 flex items-center gap-2">
+                  <Star size={18} /> Rating:
+                </h3>
+                <span className="text-zinc-400">{rating}</span>
+              </div>
+              <div>
+                <h3 className="text-xl pb-3 flex items-center gap-2">
+                  <Grid2x2 size={18} /> Genres:
+                </h3>
+                <div className="text-zinc-400">
+                  {genres.map((genre) => genre.name).join(", ")}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

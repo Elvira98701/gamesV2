@@ -29,10 +29,10 @@ export const GameHero: React.FC<GameHeroProps> = ({ game }) => {
       <Container>
         <div className="rounded-3xl overflow-hidden">
           <div className="min-h-[80vh] flex size-full flex-col gap-2 sm:gap-4 justify-end text-background p-5 relative">
-            <h1 className="title-small z-10 relative max-w-max bg-foreground rounded-xl p-2">
+            <h1 className="title-small z-10 relative max-w-max bg-foreground rounded-3xl p-2">
               {game.name}
             </h1>
-            <div className="flex items-center gap-2 z-10 relative">
+            <div className="flex items-center z-10 relative">
               <GameDialog description={game.description_raw} />
               <Button
                 size="icon"

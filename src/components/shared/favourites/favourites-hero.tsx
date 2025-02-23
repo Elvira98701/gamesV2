@@ -18,7 +18,7 @@ export const FavouritesHero: React.FC = () => {
 
   return (
     <section className="pb-4 pt-7 md:py-7 overflow-hidden">
-      <Container className="h-[50vh] flex justify-center gap-4 md:gap-7">
+      <Container className="h-[60vh] flex justify-center gap-4 md:gap-7">
         <BentoTilt className="rounded-xl flex-1">
           <div className="flex size-full flex-col justify-center bg-violet-300 p-5">
             <Link

@@ -28,13 +28,16 @@ export const FavouritesList: React.FC<FavouritesListProps> = ({
     <section className={className}>
       <Container>
         {favourites.length > 0 ? (
-          <>
+          <div className="pt-16 lg:pt-28">
+            <h3 className="text-background pb-10">
+              Games ({favourites.length})
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
               {favourites.map((game) => (
                 <GameCard
                   key={game.id}
                   game={game}
-                  className="border border-zinc-800"
+                  className="border border-zinc-900"
                 />
               ))}
             </div>
@@ -48,7 +51,7 @@ export const FavouritesList: React.FC<FavouritesListProps> = ({
                 Clear all
               </Button>
             </div>
-          </>
+          </div>
         ) : (
           <div className="min-h-40 flex justify-center items-center rounded-xl border border-zinc-800">
             <p className="flex items-center gap-2 text-lg text-background">

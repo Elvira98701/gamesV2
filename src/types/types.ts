@@ -23,6 +23,12 @@ export const gameDetailsSchema = gameSchema.extend({
   movies_count: z.number(),
   screenshots_count: z.number(),
   website: z.string().url().nullable(),
+  genres: z.array(
+    z.object({
+      id: z.number(),
+      name: z.string(),
+    })
+  ),
 });
 
 export const gamesResponseSchema = z.object({
