@@ -42,7 +42,7 @@ export const Screenshots: React.FC<ScreenshotsProps> = ({ className, id }) => {
     <div className={cn("pt-16 lg:pt-28", className)}>
       <Container>
         <h2 className="text-center mb-10">Screenshots</h2>
-        <Carousel className="w-full max-w-screen-xl mx-auto">
+        <Carousel className="w-full max-w-screen-xl max-h-[600px] mx-auto overflow-hidden">
           <CarouselContent>
             {screenshots.map((screenshot) => (
               <CarouselItem key={screenshot.id}>

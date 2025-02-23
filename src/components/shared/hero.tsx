@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
   });
 
   return (
-    <section className="relative h-screen w-full lg:p-7 overflow-x-hidden">
+    <section className="relative h-lvh w-full lg:p-7 overflow-x-hidden">
       <div
         className="relative z-10 h-full w-full overflow-hidden rounded-b-3xl lg:rounded-3xl bg-foreground will-change-auto"
         id="video-frame"
@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
             className="object-cover object-right-bottom size-full rounded-3xl"
           />
         </div>
-        <div className="absolute bottom-24 xl:bottom-1/2 xl:translate-y-1/2 left-0 w-full">
+        <div className="absolute bottom-10 xl:bottom-1/2 xl:translate-y-1/2 left-0 w-full">
           <Container className="text-background xl:text-foreground">
             <h1>
               {"GameFinder".split("").map((word, idx) => (
