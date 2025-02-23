@@ -52,6 +52,20 @@ export const moviesResponseSchema = z.object({
   results: z.array(movieSchema),
 });
 
+export const screenshotSchema = z.object({
+  id: z.number(),
+  image: z.string().url(),
+  width: z.number(),
+  height: z.number(),
+});
+
+export const screenshotsResponseSchema = z.object({
+  count: z.number(),
+  next: z.string().nullable(),
+  previous: z.string().nullable(),
+  results: z.array(screenshotSchema),
+});
+
 export const genreSchema = z.object({
   id: z.number(),
   name: z.string(),
@@ -93,6 +107,8 @@ export type GameDetails = z.infer<typeof gameDetailsSchema>;
 export type GamesResponse = z.infer<typeof gamesResponseSchema>;
 export type Movie = z.infer<typeof movieSchema>;
 export type MoviesResponse = z.infer<typeof moviesResponseSchema>;
+export type Screenshot = z.infer<typeof screenshotSchema>;
+export type ScreenshotsResponse = z.infer<typeof screenshotsResponseSchema>;
 export type Genre = z.infer<typeof genreSchema>;
 export type GenresResponse = z.infer<typeof genresResponseSchema>;
 export type Platform = z.infer<typeof platformSchema>;

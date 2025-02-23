@@ -5,6 +5,7 @@ import {
   GenresResponse,
   MoviesResponse,
   PlatfromsResponse,
+  ScreenshotsResponse,
 } from "@/types/types";
 import { BASE_URL } from "@/utils/constants";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
@@ -50,6 +51,10 @@ export const gamesApi = createApi({
     getMoviesById: builder.query<MoviesResponse, number>({
       query: (id) => `/games/${id}/movies?key=${import.meta.env.VITE_API_KEY}`,
     }),
+    getScreenshotsById: builder.query<ScreenshotsResponse, number>({
+      query: (id) =>
+        `/games/${id}/screenshots?key=${import.meta.env.VITE_API_KEY}`,
+    }),
     getGenres: builder.query<GenresResponse, void>({
       query: () => `/genres?key=${import.meta.env.VITE_API_KEY}`,
     }),
@@ -67,6 +72,7 @@ export const {
   useGetSliderGamesQuery,
   useGetGameByIdQuery,
   useGetMoviesByIdQuery,
+  useGetScreenshotsByIdQuery,
   useGetGenresQuery,
   useGetPlatformsQuery,
   useGetDevelopersQuery,

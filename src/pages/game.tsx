@@ -1,7 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Loader } from "lucide-react";
-import { Contact, GameDetails, GameHero } from "@/components/shared";
+import {
+  Contact,
+  GameDetails,
+  GameHero,
+  Screenshots,
+} from "@/components/shared";
 import { useGetGameByIdQuery } from "@/features/games/gamesApi";
 
 export const Game: React.FC = () => {
@@ -34,6 +39,7 @@ export const Game: React.FC = () => {
         description={data.description_raw}
         genres={data.genres}
       />
+      {data.screenshots_count > 0 && <Screenshots id={data.id} />}
       <Contact />
     </main>
   );
