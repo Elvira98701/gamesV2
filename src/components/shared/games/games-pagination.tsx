@@ -70,6 +70,7 @@ export const GamesPagination: React.FC<GamesPaginationProps> = ({ count }) => {
               e.preventDefault();
               if (currentPage > 1) goToPage(currentPage - 1);
             }}
+            className="h-9 w-9"
           />
         </PaginationItem>
 
@@ -82,6 +83,7 @@ export const GamesPagination: React.FC<GamesPaginationProps> = ({ count }) => {
               e.preventDefault();
               if (currentPage < totalPages) goToPage(currentPage + 1);
             }}
+            className="h-9 w-9"
           />
         </PaginationItem>
       </PaginationContent>

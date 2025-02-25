@@ -53,6 +53,9 @@ const filterSlice = createSlice({
       state.tempGenres = [];
       state.tempPlatforms = [];
       state.tempDevelopers = [];
+      state.selectedGenres = [];
+      state.selectedPlatforms = [];
+      state.selectedDevelopers = [];
     },
     setCurrentPage(state, action: PayloadAction<number>) {
       state.currentPage = action.payload;
