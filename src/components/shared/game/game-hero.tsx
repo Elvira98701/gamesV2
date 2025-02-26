@@ -51,7 +51,6 @@ export const GameHero: React.FC<GameHeroProps> = ({ game }) => {
             <img
               src={game.background_image}
               alt={game.name}
-              fetchPriority="high"
               className="object-cover object-center size-full absolute top-0 left-0"
             />
           </div>

@@ -16,7 +16,7 @@ export const Games: React.FC = () => {
     <main className="pt-28 md:pt-32 pb-16 min-h-screen">
       <Container className="flex gap-4">
         {isWide && (
-          <Filters className="hidden md:block max-w-64 w-full rounded-2xl border p-4" />
+          <Filters className="hidden md:block max-w-60 2xl:max-w-64 w-full rounded-2xl border p-4" />
         )}
         <section className="flex-1">
           <div className="mb-5 flex gap-2 md:gap-6 items-center flex-col md:flex-row">

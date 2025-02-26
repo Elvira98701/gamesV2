@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
         className="relative h-full w-full overflow-hidden rounded-b-3xl lg:rounded-3xl bg-foreground will-change-auto"
         id="video-frame"
       >
-        <div className="absolute z-10 left-0 top-0 w-full h-2/3 lg:size-full overflow-hidden p-4">
+        <div className="absolute z-10 left-0 top-0 w-full h-2/3 xl:size-full overflow-hidden p-4">
           <video
             poster="/images/poster.jpg"
             loop
@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
           </video>
         </div>
         <div className="absolute z-20 bottom-10 xl:bottom-1/2 xl:translate-y-1/2 left-0 w-full">
-          <Container className="text-background xl:text-foreground">
+          <Container className="text-background xl:text-foreground lg:pl-10">
             <h1>
               {"GameFinder".split("").map((word, idx) => (
                 <span
@@ -68,11 +68,11 @@ export const Hero: React.FC = () => {
             <ButtonLink
               href="/games"
               size="lg"
-              className="bg-purple-300 text-foreground lg:bg-foreground lg:text-background"
+              className="bg-purple-300 text-foreground xl:bg-foreground xl:text-background"
             >
               Show all
             </ButtonLink>
-            <div className="hidden lg:flex items-center gap-6 mt-8">
+            <div className="hidden xl:flex items-center gap-6 mt-8">
               <img src="/images/ps5.svg" alt="ps5" />
               <img src="/images/xbox.svg" alt="xbox" />
               <img src="/images/pc.svg" alt="pc" />
