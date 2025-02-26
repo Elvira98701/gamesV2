@@ -34,11 +34,7 @@ export const FavouritesList: React.FC<FavouritesListProps> = ({
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
               {favourites.map((game) => (
-                <GameCard
-                  key={game.id}
-                  game={game}
-                  className="border border-zinc-900"
-                />
+                <GameCard key={game.id} game={game} />
               ))}
             </div>
             <div className="pt-7 flex justify-center">

@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Search } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import {
+  resetFilters,
   selectSearchValue,
   setCurrentPage,
   setSearchValue,
@@ -21,6 +22,13 @@ export const SearchInput: React.FC<SearchInputProps> = ({ className }) => {
   const handleSearch = () => {
     dispatch(setSearchValue(inputValue));
     dispatch(setCurrentPage(1));
+    dispatch(resetFilters());
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
   };
 
   useEffect(() => {
@@ -33,6 +41,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({ className }) => {
         type="search"
         value={inputValue}
         onChange={(event) => setInputValue(event.target.value)}
+        onKeyDown={handleKeyDown}
         placeholder="Search for games..."
       />
       <Button className="rounded-lg" variant="secondary" onClick={handleSearch}>

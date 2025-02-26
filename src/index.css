@@ -180,3 +180,14 @@ h3,
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }
+
+.game-card {
+  position: relative;
+}
+
+.game-card::after {
+  content: '';
+  background-image: linear-gradient(to top, rgb(0 0 0 / 0.4), rgb(0 0 0 / 0));
+  position: absolute;
+  inset: 0;
+}

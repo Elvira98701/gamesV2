@@ -48,7 +48,13 @@ export const GamesList: React.FC = () => {
     const games: Game[] = (data && data.results) || [];
     content =
       games.length > 0 ? (
-        games.map((game) => <GameCard key={game.id} game={game} />)
+        games.map((game) => (
+          <GameCard
+            key={game.id}
+            game={game}
+            className="hover:scale-105 transition duration-300 ease-in-out"
+          />
+        ))
       ) : (
         <p className="flex gap-2 items-center">
           <Frown /> No games found.

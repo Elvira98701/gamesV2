@@ -38,17 +38,12 @@ export const Features: React.FC = () => {
             src="/images/gallery/1.avif"
             title="Detailed filtering"
             description="Sort the games by rating, popularity and other parameters."
-            isComingSoon
           />
         </BentoTilt>
 
         <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-4 md:gap-7">
           <BentoTilt className="row-span-1 md:col-span-1 md:row-span-2 rounded-xl text-background">
-            <BentoCard
-              src="/images/gallery/2.avif"
-              title="Reviews"
-              isComingSoon
-            />
+            <BentoCard src="/images/gallery/2.avif" title="Reviews" />
           </BentoTilt>
 
           <BentoTilt className="row-span-1 md:col-span-1 ms-0 rounded-xl text-background md:text-foreground">
@@ -56,7 +51,6 @@ export const Features: React.FC = () => {
               src="/images/gallery/3.avif"
               title="Favourites"
               description="Save the best games and come back to them at any time."
-              isComingSoon
             />
           </BentoTilt>
 
@@ -65,7 +59,6 @@ export const Features: React.FC = () => {
               src="/images/gallery/4.avif"
               title="Search"
               description="Find games by name, genre, platform, or release year."
-              isComingSoon
             />
           </BentoTilt>
 

@@ -8,8 +8,7 @@ import {
 } from "@/features/favourites/favouritesSlice";
 import { GameDetails } from "@/types/types";
 import { Container } from "@/components/shared";
-import { Button } from "@/components/ui";
-import { GameDialog } from "./game-dialog";
+import { Button, ButtonLink } from "@/components/ui";
 
 interface GameHeroProps {
   game: GameDetails;
@@ -28,12 +27,14 @@ export const GameHero: React.FC<GameHeroProps> = ({ game }) => {
     <section className="pb-4 pt-7 md:py-12">
       <Container>
         <div className="rounded-3xl overflow-hidden">
-          <div className="min-h-[80vh] flex size-full flex-col gap-2 sm:gap-4 justify-end text-background p-5 relative">
-            <h1 className="title-small z-10 relative max-w-max bg-foreground rounded-3xl p-2">
-              {game.name}
-            </h1>
+          <div className="game-card min-h-[80vh] flex size-full flex-col gap-2 sm:gap-4 justify-end text-background p-5 relative">
+            <h1 className="title-small z-10 relative max-w-max">{game.name}</h1>
             <div className="flex items-center z-10 relative">
-              <GameDialog description={game.description_raw} />
+              {game.website && (
+                <ButtonLink href={game.website} target="_blank">
+                  Website
+                </ButtonLink>
+              )}
               <Button
                 size="icon"
                 type="button"

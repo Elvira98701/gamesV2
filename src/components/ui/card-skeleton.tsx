@@ -7,7 +7,5 @@ interface CardSkeletonProps {
 }
 
 export const CardSkeleton: React.FC<CardSkeletonProps> = ({ className }) => {
-  return (
-    <Skeleton className={cn("w-full min-h-[400px] rounded-xl", className)} />
-  );
+  return <Skeleton className={cn("w-full min-h-80 rounded-xl", className)} />;
 };

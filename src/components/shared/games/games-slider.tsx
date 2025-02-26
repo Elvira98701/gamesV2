@@ -47,7 +47,10 @@ export const GamesSlider: React.FC = () => {
                     className="md:basis-1/2 lg:basis-1/4"
                   >
                     <div className="p-1 ">
-                      <GameCard game={game} />
+                      <GameCard
+                        game={game}
+                        className="hover:-translate-y-1 transition duration-300 ease-in-out"
+                      />
                     </div>
                   </CarouselItem>
                 ))}
