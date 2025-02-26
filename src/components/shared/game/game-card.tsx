@@ -42,7 +42,7 @@ export const GameCard: React.FC<GameCardProps> = ({ className, game }) => {
             <div className="flex justify-between">
               <h3 className="text-lg">{game.name}</h3>
               <span className="inline-flex items-center gap-1">
-                <Star color="#FBFF1A" size={16} />{" "}
+                <Star color="#FBFF1A" className="fill-primary" size={16} />{" "}
                 <span className="font-bold">{game.rating}</span>
               </span>
             </div>

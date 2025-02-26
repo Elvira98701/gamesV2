@@ -63,7 +63,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
         <h2 className="text-center">Details</h2>
         <div className="flex flex-col-reverse xl:flex-row gap-10 my-10">
           <div className="max-w-4xl">
-            <div className="p-5 2xl:p-10 border border-zinc-900 rounded-xl mb-10">
+            <div className="p-5 2xl:p-10 border border-zinc-800 rounded-xl mb-10">
               <h3 className="text-xl pb-3">Description</h3>
               <p>
                 {isShowMore ? description : shortDescription}
@@ -98,7 +98,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl p-5 2xl:p-10 border border-zinc-900 grid grid-cols-2 gap-12">
+            <div className="rounded-xl p-5 2xl:p-10 border border-zinc-800 grid grid-cols-2 gap-12">
               <div>
                 <h3 className="text-xl pb-3 flex items-center gap-2">
                   <Calendar size={18} /> Released:
