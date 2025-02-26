@@ -36,13 +36,16 @@ export const Hero: React.FC = () => {
       >
         <div className="absolute z-10 left-0 top-0 w-full h-2/3 lg:size-full overflow-hidden p-4">
           <video
-            src="/video/video1.mp4"
+            poster="/images/poster.jpg"
             loop
             muted
             autoPlay
             playsInline
             className="object-cover object-right-bottom size-full rounded-3xl"
-          />
+          >
+            <source src="/video/video1.webm" type="video/webm" />
+            <source src="/video/video1.mp4" type="video/mp4" />
+          </video>
         </div>
         <div className="absolute z-20 bottom-10 xl:bottom-1/2 xl:translate-y-1/2 left-0 w-full">
           <Container className="text-background xl:text-foreground">
