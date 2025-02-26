@@ -37,7 +37,7 @@ export const Screenshots: React.FC<ScreenshotsProps> = ({ className, id }) => {
   const screenshots: Screenshot[] = (data && data.results) || [];
 
   return (
-    <div className={cn("pt-16 lg:pt-28", className)}>
+    <section className={cn("pt-16 lg:pt-28", className)}>
       <Container>
         <h2 className="text-center mb-10">Screenshots</h2>
         <Carousel className="w-full max-w-screen-xl mx-auto">
@@ -57,6 +57,6 @@ export const Screenshots: React.FC<ScreenshotsProps> = ({ className, id }) => {
           <CarouselNext />
         </Carousel>
       </Container>
-    </div>
+    </section>
   );
 };

@@ -27,7 +27,7 @@ export const Sort: React.FC = () => {
 
   return (
     <Select value={order} onValueChange={handleChangeOrder}>
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-[180px] rounded-2xl bg-background">
         <SelectValue placeholder="Sort by:" />
       </SelectTrigger>
       <SelectContent>

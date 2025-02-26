@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Frown } from "lucide-react";
 import { GameCard, GamesPagination } from "@/components/shared";
 import { CardSkeleton } from "@/components/ui";
 import {
   selectCurrentPage,
   selectOrder,
-  selectSearchValue,
   selectSelectedDevelopers,
   selectSelectedGenres,
   selectSelectedPlatforms,
@@ -20,7 +18,6 @@ export const GamesList: React.FC = () => {
   const selectedPlatforms = useAppSelector(selectSelectedPlatforms);
   const selectedDevelopers = useAppSelector(selectSelectedDevelopers);
   const currentPage = useAppSelector(selectCurrentPage);
-  const searchValue = useAppSelector(selectSearchValue);
   const order = useAppSelector(selectOrder);
 
   const [, setSearchParams] = useSearchParams();
@@ -30,7 +27,6 @@ export const GamesList: React.FC = () => {
     platforms: selectedPlatforms,
     developers: selectedDevelopers,
     page: currentPage,
-    search: searchValue,
     order,
   });
 
@@ -46,20 +42,13 @@ export const GamesList: React.FC = () => {
     content = Array.from({ length: 16 }, (_, i) => <CardSkeleton key={i} />);
   } else if (isSuccess) {
     const games: Game[] = (data && data.results) || [];
-    content =
-      games.length > 0 ? (
-        games.map((game) => (
-          <GameCard
-            key={game.id}
-            game={game}
-            className="hover:scale-105 transition duration-300 ease-in-out"
-          />
-        ))
-      ) : (
-        <p className="flex gap-2 items-center">
-          <Frown /> No games found.
-        </p>
-      );
+    content = games.map((game) => (
+      <GameCard
+        key={game.id}
+        game={game}
+        className="hover:scale-105 transition duration-300 ease-in-out"
+      />
+    ));
   } else if (isError) {
     content = (
       <div className="text-red-600">
@@ -75,7 +64,7 @@ export const GamesList: React.FC = () => {
       </div>
 
       {data && data.count > 0 && (
-        <div className="py-2 sm:p-4 border rounded-2xl">
+        <div className="py-2 sm:p-4 border rounded-2xl bg-muted">
           <GamesPagination
             count={data.count}
             setSearchParams={setSearchParams}
