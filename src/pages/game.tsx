@@ -5,6 +5,7 @@ import {
   Contact,
   GameDetails,
   GameHero,
+  Requirements,
   Screenshots,
 } from "@/components/shared";
 import { useGetGameByIdQuery } from "@/features/games/gamesApi";
@@ -27,6 +28,8 @@ export const Game: React.FC = () => {
       </div>
     );
 
+  const pcPlatform = data.platforms.find((item) => item.platform.name === "PC");
+
   return (
     <main className="bg-foreground text-background">
       <GameHero game={data} />
@@ -38,7 +41,11 @@ export const Game: React.FC = () => {
         image={data.background_image_additional}
         description={data.description_raw}
         genres={data.genres}
+        developers={data.developers}
       />
+      {pcPlatform && Object.keys(pcPlatform.requirements).length > 0 && (
+        <Requirements requirements={pcPlatform.requirements} />
+      )}
       {data.screenshots_count > 0 && <Screenshots id={data.id} />}
       <Contact />
     </main>

@@ -19,6 +19,7 @@ export { Sort } from "./filters/sort";
 export { GameCard } from "./game/game-card";
 export { GameDetails } from "./game/game-details";
 export { GameHero } from "./game/game-hero";
+export { Requirements } from "./game/requirements";
 export { Screenshots } from "./game/screenshots";
 
 export { GamesPagination } from "./games/games-pagination";

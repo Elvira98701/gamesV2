@@ -1,0 +1,61 @@
+import React from "react";
+import { Container } from "../container";
+import { parseSystemRequirements } from "@/utils/parseSystemRequirements";
+
+interface Requirements {
+  minimum?: string;
+  recommended?: string;
+}
+
+interface RequirementsProps {
+  requirements: Requirements;
+}
+
+export const Requirements: React.FC<RequirementsProps> = ({ requirements }) => {
+  const parsedMinimum = requirements.minimum
+    ? parseSystemRequirements(requirements.minimum)
+    : null;
+  const parsedRecommended = requirements.recommended
+    ? parseSystemRequirements(requirements.recommended)
+    : null;
+
+  return (
+    <section className="pt-16">
+      <Container>
+        <h2 className="middle-text mb-10">System requirements for PC</h2>
+        <div className="flex flex-col md:flex-row gap-10">
+          {parsedMinimum && (
+            <div className="flex-1">
+              <h3 className="text-xl mb-2">Minimum:</h3>
+              <ul>
+                {Object.entries(parsedMinimum).map(([key, value]) => (
+                  <li key={key}>
+                    <b className="capitalize text-primary">
+                      {key.replace(/_/g, " ")}:
+                    </b>{" "}
+                    {value}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {parsedRecommended && (
+            <div className="flex-1">
+              <h3 className="text-xl mb-2">Recommended:</h3>
+              <ul>
+                {Object.entries(parsedRecommended).map(([key, value]) => (
+                  <li key={key}>
+                    <b className="capitalize text-primary">
+                      {key.replace(/_/g, " ")}:
+                    </b>{" "}
+                    {value}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </Container>
+    </section>
+  );
+};

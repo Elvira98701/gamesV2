@@ -12,6 +12,10 @@ export const gameSchema = z.object({
         id: z.number(),
         name: z.string(),
       }),
+      requirements: z.object({
+        minimum: z.string().optional(),
+        recommended: z.string().optional(),
+      }),
     })
   ),
 });
@@ -24,6 +28,12 @@ export const gameDetailsSchema = gameSchema.extend({
   screenshots_count: z.number(),
   website: z.string().url().nullable(),
   genres: z.array(
+    z.object({
+      id: z.number(),
+      name: z.string(),
+    })
+  ),
+  developers: z.array(
     z.object({
       id: z.number(),
       name: z.string(),

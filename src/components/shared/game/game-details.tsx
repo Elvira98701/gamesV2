@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import gsap from "gsap";
-import { Calendar, Clock4, Grid2x2, Star } from "lucide-react";
+import { Calendar, Clock4, Grid2x2, Star, Wrench } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Container } from "@/components/shared";
@@ -14,6 +14,7 @@ interface GameDetailsProps {
   rating: number;
   platforms: Game["platforms"];
   genres: Details["genres"];
+  developers: Details["developers"];
   playtime: number;
   image: string | null;
   description: string;
@@ -24,6 +25,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
   rating,
   platforms,
   genres,
+  developers,
   playtime,
   image,
   description,
@@ -64,7 +66,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
         <div className="flex flex-col-reverse xl:flex-row gap-10 my-10">
           <div className="max-w-4xl">
             <div className="p-5 2xl:p-10 border border-zinc-800 rounded-xl mb-10">
-              <h3 className="text-xl pb-3">Description</h3>
+              <h3 className="text-xl pb-3">About</h3>
               <p>
                 {isShowMore ? description : shortDescription}
                 <Button
@@ -123,6 +125,14 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
                 </h3>
                 <div className="text-zinc-400">
                   {genres.map((genre) => genre.name).join(", ")}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl pb-3 flex items-center gap-2">
+                  <Wrench size={18} /> Developer:
+                </h3>
+                <div className="text-zinc-400">
+                  {developers.map((developer) => developer.name).join(", ")}
                 </div>
               </div>
             </div>
