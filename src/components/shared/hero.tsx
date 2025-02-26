@@ -31,10 +31,10 @@ export const Hero: React.FC = () => {
   return (
     <section className="relative h-lvh w-full lg:p-7 overflow-x-hidden">
       <div
-        className="relative z-10 h-full w-full overflow-hidden rounded-b-3xl lg:rounded-3xl bg-foreground will-change-auto"
+        className="relative h-full w-full overflow-hidden rounded-b-3xl lg:rounded-3xl bg-foreground will-change-auto"
         id="video-frame"
       >
-        <div className="absolute left-0 top-0 w-full h-2/3 lg:size-full overflow-hidden p-4">
+        <div className="absolute z-10 left-0 top-0 w-full h-2/3 lg:size-full overflow-hidden p-4">
           <video
             src="/video/video1.mp4"
             loop
@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
             className="object-cover object-right-bottom size-full rounded-3xl"
           />
         </div>
-        <div className="absolute bottom-10 xl:bottom-1/2 xl:translate-y-1/2 left-0 w-full">
+        <div className="absolute z-20 bottom-10 xl:bottom-1/2 xl:translate-y-1/2 left-0 w-full">
           <Container className="text-background xl:text-foreground">
             <h1>
               {"GameFinder".split("").map((word, idx) => (
