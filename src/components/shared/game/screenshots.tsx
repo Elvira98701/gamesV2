@@ -48,6 +48,7 @@ export const Screenshots: React.FC<ScreenshotsProps> = ({ className, id }) => {
                   <img
                     className="rounded-3xl size-full object-cover"
                     src={screenshot.image}
+                    loading="lazy"
                   />
                 </div>
               </CarouselItem>
