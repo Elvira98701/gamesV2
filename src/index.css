@@ -34,7 +34,7 @@
     --card-foreground: 20 14.3% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
-    --primary: 61 100% 58%;
+    --primary: 57 98% 51%;
     --primary-foreground: 26 83.3% 14.1%;
     --secondary: 60 4.8% 95.9%;
     --secondary-foreground: 24 9.8% 10%;
@@ -100,7 +100,7 @@ h3,
 }
 
 .middle-text {
-  @apply font-accent font-normal uppercase leading-[1.1];
+  @apply font-accent font-normal leading-[1.1];
   font-size: clamp(1.875rem, 1.5rem + 1.88vw, 3.75rem);
 }
 
@@ -187,7 +187,7 @@ h3,
 
 .game-card::after {
   content: '';
-  background-image: linear-gradient(to top, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0) 30%);
+  background-image: linear-gradient(to top, rgb(0 0 0 / 0.7), rgb(0 0 0 / 0) 30%);
   position: absolute;
   inset: 0;
 }

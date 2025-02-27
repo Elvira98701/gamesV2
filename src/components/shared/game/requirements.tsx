@@ -22,12 +22,14 @@ export const Requirements: React.FC<RequirementsProps> = ({ requirements }) => {
   return (
     <section className="pt-16">
       <Container>
-        <h2 className="middle-text mb-10">System requirements for PC</h2>
+        <h2 className="middle-text mb-10 capitalize">
+          System requirements for PC
+        </h2>
         <div className="flex flex-col md:flex-row gap-10">
           {parsedMinimum && (
             <div className="flex-1">
               <h3 className="text-xl mb-2">Minimum:</h3>
-              <ul>
+              <ul className="list-disc">
                 {Object.entries(parsedMinimum).map(([key, value]) => (
                   <li key={key}>
                     <b className="capitalize text-primary">
@@ -42,7 +44,7 @@ export const Requirements: React.FC<RequirementsProps> = ({ requirements }) => {
           {parsedRecommended && (
             <div className="flex-1">
               <h3 className="text-xl mb-2">Recommended:</h3>
-              <ul>
+              <ul className="list-disc">
                 {Object.entries(parsedRecommended).map(([key, value]) => (
                   <li key={key}>
                     <b className="capitalize text-primary">
