@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Heart, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
@@ -9,7 +10,6 @@ import {
 import { Game } from "@/types/types";
 import { Button, Card } from "@/components/ui";
 import { CardContent } from "@/components/ui/card";
-import { Link } from "react-router-dom";
 
 interface GameCardProps {
   className?: string;

@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useClickAway, useDebounce } from "react-use";
+import { Link } from "react-router-dom";
 import { Frown, Search } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import {
@@ -7,10 +9,8 @@ import {
   setSearchValue,
 } from "@/features/filter/filterSlice";
 import { Input } from "@/components/ui";
-import { useClickAway, useDebounce } from "react-use";
 import { useGetSearchQuery } from "@/features/games/gamesApi";
 import { Game } from "@/types/types";
-import { Link } from "react-router-dom";
 
 interface SearchInputProps {
   className?: string;
@@ -44,7 +44,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({ className }) => {
   let content: React.ReactNode;
 
   if (isLoading) {
-    content = <p>Loading</p>;
+    content = <p>Loading...</p>;
   } else if (isSuccess) {
     const games: Game[] = (data && data.results) || [];
     content =
@@ -72,7 +72,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({ className }) => {
         </p>
       );
   } else if (isError) {
-    content = <p>Error</p>;
+    content = <p>Search error</p>;
   }
 
   return (

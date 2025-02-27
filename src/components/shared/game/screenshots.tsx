@@ -1,7 +1,8 @@
+import React from "react";
+import { cn } from "@/lib/utils";
 import { useGetScreenshotsByIdQuery } from "@/features/games/gamesApi";
 import { Screenshot } from "@/types/types";
 import { Loader } from "lucide-react";
-import React from "react";
 import { Container } from "../container";
 import { Carousel } from "@/components/ui";
 import {
@@ -10,7 +11,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
 
 interface ScreenshotsProps {
   className?: string;

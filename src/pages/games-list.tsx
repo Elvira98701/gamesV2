@@ -65,10 +65,7 @@ export const GamesList: React.FC = () => {
 
       {data && data.count > 0 && (
         <div className="py-2 sm:p-4 border rounded-2xl bg-muted">
-          <GamesPagination
-            count={data.count}
-            setSearchParams={setSearchParams}
-          />
+          <GamesPagination count={data.count} />
         </div>
       )}
     </div>

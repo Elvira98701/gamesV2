@@ -8,12 +8,14 @@ import { BentoTilt } from "./bento/bento-tilt";
 import { BentoCard } from "./bento/bento-card";
 import { Logo } from "@/components/ui";
 import { pageConfig } from "@/utils/pages.config";
+import { useMedia } from "react-use";
 
 gsap.registerPlugin(ScrollTrigger);
 const LazyVideo = lazy(() => import("./lazy-video"));
 
 export const Features: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
+  const isWide = useMedia("(min-width: 1300px)");
 
   useGSAP(() => {
     gsap.to(document.body, {
@@ -42,23 +44,25 @@ export const Features: React.FC = () => {
         </BentoTilt>
 
         <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-4 md:gap-7">
-          <BentoTilt className="row-span-1 md:col-span-1 md:row-span-2 rounded-xl text-background">
+          <BentoTilt className="row-span-1 md:col-span-1 md:row-span-2 rounded-xl">
             <BentoCard src="/images/gallery/2.avif" title="Reviews" />
           </BentoTilt>
 
-          <BentoTilt className="row-span-1 md:col-span-1 ms-0 rounded-xl text-background md:text-foreground">
+          <BentoTilt className="row-span-1 md:col-span-1 ms-0 rounded-xl">
             <BentoCard
               src="/images/gallery/3.avif"
               title="Favourites"
               description="Save the best games and come back to them at any time."
+              className={!isWide ? "bento-card" : ""}
             />
           </BentoTilt>
 
-          <BentoTilt className="md:col-span-1 me-0 rounded-xl ">
+          <BentoTilt className="md:col-span-1 me-0 rounded-xl">
             <BentoCard
               src="/images/gallery/4.avif"
               title="Search"
               description="Find games by name, genre, platform, or release year."
+              className={!isWide ? "bento-card" : ""}
             />
           </BentoTilt>
 

@@ -1,6 +1,5 @@
 import gsap from "gsap";
 import { useRef } from "react";
-
 import { useMedia } from "react-use";
 import { Container } from "../container";
 import { ContactDialog } from "./contact-dialog";

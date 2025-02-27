@@ -26,7 +26,7 @@ export const BentoCard: React.FC<BentoCardProps> = ({
         <div>
           <h3 className="overflow-hidden text-ellipsis">{title}</h3>
           {description && (
-            <p className="mt-3 max-w-64 text-xs md:text-base">{description}</p>
+            <p className="mt-3 max-w-64 text-sm md:text-base">{description}</p>
           )}
         </div>
       </div>

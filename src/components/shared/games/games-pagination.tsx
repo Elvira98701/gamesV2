@@ -16,7 +16,6 @@ import {
 
 interface GamesPaginationProps {
   count: number;
-  setSearchParams: (params: URLSearchParams) => void;
 }
 
 export const GamesPagination: React.FC<GamesPaginationProps> = ({ count }) => {
