@@ -29,7 +29,7 @@ export const Requirements: React.FC<RequirementsProps> = ({ requirements }) => {
           {parsedMinimum && (
             <div className="flex-1">
               <h3 className="text-xl mb-2">Minimum:</h3>
-              <ul className="list-disc">
+              <ul className="list-disc list-inside">
                 {Object.entries(parsedMinimum).map(([key, value]) => (
                   <li key={key}>
                     <b className="capitalize text-primary">
@@ -44,7 +44,7 @@ export const Requirements: React.FC<RequirementsProps> = ({ requirements }) => {
           {parsedRecommended && (
             <div className="flex-1">
               <h3 className="text-xl mb-2">Recommended:</h3>
-              <ul className="list-disc">
+              <ul className="list-disc list-inside">
                 {Object.entries(parsedRecommended).map(([key, value]) => (
                   <li key={key}>
                     <b className="capitalize text-primary">

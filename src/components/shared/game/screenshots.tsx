@@ -54,8 +54,8 @@ export const Screenshots: React.FC<ScreenshotsProps> = ({ className, id }) => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="left-5" />
+          <CarouselNext className="right-5" />
         </Carousel>
       </Container>
     </section>

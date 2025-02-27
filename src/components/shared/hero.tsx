@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 export const Hero: React.FC = () => {
   useGSAP(() => {
     gsap.to("#video-frame", {
-      scale: 0.5,
+      scale: 0.3,
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: "#video-frame",
