@@ -25,6 +25,7 @@ export { Screenshots } from "./game/screenshots";
 export { GamesPagination } from "./games/games-pagination";
 export { GamesSlider } from "./games/games-slider";
 
+export { AnimatedTitle } from "./animated-title";
 export { BrowseGames } from "./browse-games";
 export { Container } from "./container";
 export { Features } from "./features";

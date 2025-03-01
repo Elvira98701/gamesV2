@@ -19,9 +19,9 @@ export const Games: React.FC = () => {
           <Filters className="hidden md:block max-w-60 2xl:max-w-64 w-full rounded-2xl border p-4" />
         )}
         <section className="flex-1">
-          <div className="mb-5 flex gap-2 md:gap-6 items-center flex-col md:flex-row">
-            <h1 className="middle-text">All games</h1>
-            <p className="max-w-[700px] text-sm text-center md:text-left">
+          <div className="mb-5 flex gap-2 xl:gap-6 items-center flex-col xl:flex-row">
+            <h1 className="middle-text">All Games</h1>
+            <p className="max-w-[700px] text-sm text-center xl:text-left">
               Welcome to the catalog of the best video games! Here you will find
               popular and highly appreciated projects from various genres,
               platforms, and developers. Use filters to narrow down the

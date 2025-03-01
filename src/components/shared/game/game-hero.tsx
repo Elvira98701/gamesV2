@@ -1,4 +1,7 @@
 import React from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
 import { cn } from "@/lib/utils";
 import { Heart } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
@@ -14,10 +17,25 @@ interface GameHeroProps {
   game: GameDetails;
 }
 
+gsap.registerPlugin(ScrollTrigger);
+
 export const GameHero: React.FC<GameHeroProps> = ({ game }) => {
   const dispatch = useAppDispatch();
   const favourites = useAppSelector(selectFavourites);
   const existingIndex = favourites.findIndex((item) => item.id === game.id);
+
+  useGSAP(() => {
+    gsap.to("#hero-frame", {
+      scale: 1.5,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: "#hero-frame",
+        start: "center center",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  });
 
   const handleToggleFavourites = () => {
     dispatch(favouritesToggled(game));
@@ -49,6 +67,7 @@ export const GameHero: React.FC<GameHeroProps> = ({ game }) => {
               </Button>
             </div>
             <img
+              id="hero-frame"
               src={game.background_image}
               alt={game.name}
               className="object-cover object-center size-full absolute top-0 left-0"

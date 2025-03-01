@@ -2,7 +2,6 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { useGetScreenshotsByIdQuery } from "@/features/games/gamesApi";
 import { Screenshot } from "@/types/types";
-import { Loader } from "lucide-react";
 import { Container } from "../container";
 import { Carousel } from "@/components/ui";
 import {
@@ -11,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Loader } from "lucide-react";
 
 interface ScreenshotsProps {
   className?: string;
@@ -19,13 +19,6 @@ interface ScreenshotsProps {
 
 export const Screenshots: React.FC<ScreenshotsProps> = ({ className, id }) => {
   const { data, isLoading, error } = useGetScreenshotsByIdQuery(id);
-
-  if (isLoading)
-    return (
-      <div className="min-h-screen flex justify-center items-center bg-foreground text-background">
-        <Loader className="animate-spin" />
-      </div>
-    );
 
   if (!data || error)
     return (
@@ -42,17 +35,25 @@ export const Screenshots: React.FC<ScreenshotsProps> = ({ className, id }) => {
         <h2 className="text-center mb-10">Screenshots</h2>
         <Carousel className="w-full max-w-screen-xl mx-auto">
           <CarouselContent>
-            {screenshots.map((screenshot) => (
-              <CarouselItem key={screenshot.id}>
-                <div className="p-1 h-[500px] sm:h-[700px]">
-                  <img
-                    className="rounded-3xl size-full object-cover"
-                    src={screenshot.image}
-                    loading="lazy"
-                  />
+            {isLoading ? (
+              <CarouselItem>
+                <div className="p-1 h-[500px] sm:h-[700px] flex items-center justify-center">
+                  <Loader className="animate-spin" />
                 </div>
               </CarouselItem>
-            ))}
+            ) : (
+              screenshots.map((screenshot) => (
+                <CarouselItem key={screenshot.id}>
+                  <div className="p-1 h-[500px] sm:h-[700px]">
+                    <img
+                      className="rounded-3xl size-full object-cover"
+                      src={screenshot.image}
+                      loading="lazy"
+                    />
+                  </div>
+                </CarouselItem>
+              ))
+            )}
           </CarouselContent>
           <CarouselPrevious className="left-5" />
           <CarouselNext className="right-5" />

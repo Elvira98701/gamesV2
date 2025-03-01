@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { ButtonLink } from "@/components/ui";
 import { Container } from "./container";
+import { AnimatedTitle } from "./animated-title";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,13 +19,6 @@ export const Hero: React.FC = () => {
         end: "bottom center",
         scrub: true,
       },
-    });
-
-    gsap.to(".animated-word", {
-      opacity: 1,
-      transform: "translate(0, 0)",
-      ease: "power2.inOut",
-      stagger: 0.04,
     });
   });
 
@@ -50,13 +44,7 @@ export const Hero: React.FC = () => {
         <div className="absolute z-20 bottom-10 xl:bottom-1/2 xl:translate-y-1/2 left-0 w-full">
           <Container className="text-background xl:text-foreground lg:pl-10">
             <h1>
-              {"GameFinder".split("").map((word, idx) => (
-                <span
-                  key={idx}
-                  className="animated-word inline-block"
-                  dangerouslySetInnerHTML={{ __html: word }}
-                />
-              ))}
+              <AnimatedTitle title="GameFinder" />
             </h1>
             <p className="max-w-screen-md pt-2 pb-4 text-sm sm:text-base">
               <b>GameFinder</b> is a convenient service for searching games by

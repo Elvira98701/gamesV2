@@ -1,40 +1,11 @@
-import React, { useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import React from "react";
+import { Game } from "@/types/types";
+import { useGamesWithFilters } from "@/hooks/use-games-with-filters";
 import { GameCard, GamesPagination } from "@/components/shared";
 import { CardSkeleton } from "@/components/ui";
-import {
-  selectCurrentPage,
-  selectOrder,
-  selectSelectedDevelopers,
-  selectSelectedGenres,
-  selectSelectedPlatforms,
-} from "@/features/filter/filterSlice";
-import { useGetGamesQuery } from "@/features/games/gamesApi";
-import { useAppSelector } from "@/features/hooks";
-import { Game } from "@/types/types";
 
 export const GamesList: React.FC = () => {
-  const selectedGenres = useAppSelector(selectSelectedGenres);
-  const selectedPlatforms = useAppSelector(selectSelectedPlatforms);
-  const selectedDevelopers = useAppSelector(selectSelectedDevelopers);
-  const currentPage = useAppSelector(selectCurrentPage);
-  const order = useAppSelector(selectOrder);
-
-  const [, setSearchParams] = useSearchParams();
-
-  const { data, isLoading, isSuccess, isError } = useGetGamesQuery({
-    genres: selectedGenres,
-    platforms: selectedPlatforms,
-    developers: selectedDevelopers,
-    page: currentPage,
-    order,
-  });
-
-  useEffect(() => {
-    const params = new URLSearchParams();
-    params.set("page", String(currentPage));
-    setSearchParams(params);
-  }, [currentPage, setSearchParams]);
+  const { data, isLoading, isSuccess, isError } = useGamesWithFilters();
 
   let content: React.ReactNode;
 
