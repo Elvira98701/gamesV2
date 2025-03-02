@@ -18,15 +18,22 @@ export const Features: React.FC = () => {
   const isWide = useMedia("(min-width: 1300px)");
 
   useGSAP(() => {
-    gsap.to(document.body, {
-      backgroundColor: "#0C0A09",
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: "#features",
-        start: "top center",
-        end: "center center",
-        scrub: true,
-        onEnter: () => setLoaded(true),
+    ScrollTrigger.create({
+      trigger: "#features",
+      start: "top center",
+      onEnter: () => {
+        gsap.to(document.body, {
+          backgroundColor: "#0C0A09",
+          ease: "power1.inOut",
+        });
+        setLoaded(true);
+      },
+      onLeaveBack: () => {
+        gsap.to(document.body, {
+          backgroundColor: "#FFFFFF",
+          ease: "power1.inOut",
+        });
+        setLoaded(false);
       },
     });
   });
