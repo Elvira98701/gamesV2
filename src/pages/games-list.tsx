@@ -1,6 +1,6 @@
 import React from "react";
 import { Game } from "@/types/types";
-import { useGamesWithFilters } from "@/hooks/use-games-with-filters";
+import { useGamesWithFilters } from "@/hooks";
 import { GameCard, GamesPagination } from "@/components/shared";
 import { CardSkeleton } from "@/components/ui";
 
