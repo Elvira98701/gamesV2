@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { DropdownMenu } from "@/components/ui";
 import { Ellipsis } from "lucide-react";
 import {
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  DropdownMenu,
+  DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { IPageItem } from "@/types/types";
 
@@ -20,9 +20,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
   className,
   pagesList,
 }) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className={className}>
-      <DropdownMenu>
+      <DropdownMenu open={open} onOpenChange={setOpen}>
         <DropdownMenuTrigger className="flex justify-center items-center">
           <Ellipsis />
         </DropdownMenuTrigger>
@@ -31,7 +33,9 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           <DropdownMenuSeparator />
           {pagesList.map((page) => (
             <DropdownMenuItem key={page.id}>
-              <Link to={page.href}>{page.title}</Link>
+              <Link to={page.href} onClick={() => setOpen(false)}>
+                {page.title}
+              </Link>
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>
