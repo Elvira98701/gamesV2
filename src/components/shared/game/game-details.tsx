@@ -65,9 +65,9 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
     <section className="pt-16 lg:pt-28" id="details">
       <Container>
         <h2 className="text-center">Details</h2>
-        <div className="flex flex-col-reverse xl:flex-row items-center gap-10 my-10">
+        <div className="flex flex-col-reverse xl:flex-row items-center gap-5 lg:gap-10 my-10">
           <div className="w-full lg:max-w-4xl">
-            <div className="p-5 2xl:p-10 border border-zinc-800 rounded-xl mb-10">
+            <div className="p-5 2xl:p-10 border border-zinc-800 rounded-xl mb-5 lg:mb-10">
               <h3 className="text-xl pb-3">About</h3>
               <p>
                 {isShowMore ? description : shortDescription}
@@ -87,7 +87,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
               ></div>
             )}
           </div>
-          <div className="flex-1 flex flex-col sm:flex-row justify-center xl:justify-start xl:flex-col gap-10">
+          <div className="flex-1 w-full flex flex-col sm:flex-row justify-center xl:justify-start xl:flex-col gap-5 lg:gap-10">
             <div ref={platformsRef}>
               <h3 className="text-xl pb-3 text-primary">Platforms:</h3>
               <ul>

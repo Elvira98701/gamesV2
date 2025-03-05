@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useGetScreenshotsByIdQuery } from "@/features/games/gamesApi";
 import { Screenshot } from "@/types/types";
 import { Container } from "../container";
 import { Carousel } from "@/components/ui";
 import {
+  CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -19,6 +20,22 @@ interface ScreenshotsProps {
 
 export const Screenshots: React.FC<ScreenshotsProps> = ({ className, id }) => {
   const { data, isLoading, error } = useGetScreenshotsByIdQuery(id);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
 
   if (!data || error)
     return (
@@ -32,8 +49,8 @@ export const Screenshots: React.FC<ScreenshotsProps> = ({ className, id }) => {
   return (
     <section className={cn("pt-16 lg:pt-28", className)}>
       <Container>
-        <h2 className="text-center mb-10">Screenshots</h2>
-        <Carousel className="w-full max-w-screen-xl mx-auto">
+        <h2 className="text-center mb-5 lg:mb-10">Screenshots</h2>
+        <Carousel setApi={setApi} className="w-full max-w-screen-xl mx-auto">
           <CarouselContent>
             {isLoading ? (
               <CarouselItem>
@@ -58,6 +75,9 @@ export const Screenshots: React.FC<ScreenshotsProps> = ({ className, id }) => {
           <CarouselPrevious className="left-5" />
           <CarouselNext className="right-5" />
         </Carousel>
+        <div className="py-2 text-center text-md text-zinc-400">
+          {current} / {count}
+        </div>
       </Container>
     </section>
   );

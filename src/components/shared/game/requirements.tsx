@@ -20,12 +20,12 @@ export const Requirements: React.FC<RequirementsProps> = ({ requirements }) => {
     : null;
 
   return (
-    <section className="pt-16">
+    <section className="pt-8 lg:pt-14">
       <Container>
-        <h2 className="middle-text mb-10 capitalize">
+        <h2 className="middle-text mb-5 lg:mb-10 capitalize">
           System requirements for PC
         </h2>
-        <div className="flex flex-col md:flex-row gap-10">
+        <div className="flex flex-col md:flex-row gap-5 lg:gap-10">
           {parsedMinimum && (
             <div className="flex-1">
               <h3 className="text-xl mb-2">Minimum:</h3>
