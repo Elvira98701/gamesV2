@@ -42,6 +42,7 @@ export const Game: React.FC = () => {
         description={data.description_raw}
         genres={data.genres}
         developers={data.developers}
+        metacritic={data.metacritic}
       />
       {pcPlatform && Object.keys(pcPlatform.requirements).length > 0 && (
         <Requirements requirements={pcPlatform.requirements} />

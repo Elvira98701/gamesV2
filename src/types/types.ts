@@ -27,6 +27,7 @@ export const gameDetailsSchema = gameSchema.extend({
   movies_count: z.number(),
   screenshots_count: z.number(),
   website: z.string().url().nullable(),
+  metacritic: z.number(),
   genres: z.array(
     z.object({
       id: z.number(),

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import gsap from "gsap";
-import { Calendar, Clock4, Grid2x2, Star, Wrench } from "lucide-react";
+import { Brain, Calendar, Clock4, Grid2x2, Star, Wrench } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Container } from "@/components/shared";
@@ -18,6 +18,7 @@ interface GameDetailsProps {
   playtime: number;
   image: string | null;
   description: string;
+  metacritic: number;
 }
 
 export const GameDetails: React.FC<GameDetailsProps> = ({
@@ -29,6 +30,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
   playtime,
   image,
   description,
+  metacritic,
 }) => {
   const platformsRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLLIElement | null)[]>([]);
@@ -63,8 +65,8 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
     <section className="pt-16 lg:pt-28" id="details">
       <Container>
         <h2 className="text-center">Details</h2>
-        <div className="flex flex-col-reverse xl:flex-row gap-10 my-10">
-          <div className="max-w-4xl">
+        <div className="flex flex-col-reverse xl:flex-row items-center gap-10 my-10">
+          <div className="w-full lg:max-w-4xl">
             <div className="p-5 2xl:p-10 border border-zinc-800 rounded-xl mb-10">
               <h3 className="text-xl pb-3">About</h3>
               <p>
@@ -100,7 +102,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl p-5 2xl:p-10 border border-zinc-800 grid grid-cols-2 gap-12">
+            <div className="rounded-xl p-5 2xl:p-10 border border-zinc-800 grid grid-cols-2 gap-y-12 gap-x-2">
               <div>
                 <h3 className="text-xl pb-3 flex items-center gap-2">
                   <Calendar size={18} /> Released:
@@ -118,6 +120,12 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
                   <Star size={18} /> Rating:
                 </h3>
                 <span className="text-zinc-400">{rating}</span>
+              </div>
+              <div>
+                <h3 className="text-xl pb-3 flex items-center gap-2">
+                  <Brain size={18} /> Metacritic:
+                </h3>
+                <div className="text-zinc-400">{metacritic}</div>
               </div>
               <div>
                 <h3 className="text-xl pb-3 flex items-center gap-2">
