@@ -1,5 +1,6 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
+import { MoveDown, MoveUp } from "lucide-react";
 import { selectOrder, setOrder } from "@/features/filter/filterSlice";
 import { Select } from "@/components/ui";
 import {
@@ -12,9 +13,14 @@ import {
 } from "@/components/ui/select";
 
 const sortList = [
-  { id: 1, name: "-added", title: "Popularity" },
-  { id: 2, name: "name", title: "Name" },
-  { id: 3, name: "-rating", title: "Rating" },
+  { id: 1, name: "-added", title: "Popularity", order: "desc" },
+  { id: 2, name: "added", title: "Popularity", order: "asc" },
+  { id: 3, name: "-name", title: "Name", order: "desc" },
+  { id: 4, name: "name", title: "Name", order: "asc" },
+  { id: 5, name: "-rating", title: "Rating", order: "desc" },
+  { id: 6, name: "rating", title: "Rating", order: "asc" },
+  { id: 7, name: "-released", title: "Released", order: "desc" },
+  { id: 8, name: "released", title: "Released", order: "asc" },
 ];
 
 export const Sort: React.FC = () => {
@@ -33,9 +39,16 @@ export const Sort: React.FC = () => {
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Sorting</SelectLabel>
-          {sortList.map(({ id, name, title }) => (
+          {sortList.map(({ id, name, title, order }) => (
             <SelectItem key={id} value={name}>
-              {title}
+              <span className="flex items-center gap-2">
+                <span>{title}</span>{" "}
+                {order === "desc" ? (
+                  <MoveDown size={12} />
+                ) : (
+                  <MoveUp size={12} />
+                )}
+              </span>
             </SelectItem>
           ))}
         </SelectGroup>
