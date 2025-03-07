@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Pagination } from "@/components/ui";
 import {
   PaginationContent,
@@ -22,6 +22,14 @@ export const GamesPagination: React.FC<GamesPaginationProps> = ({ count }) => {
   const dispatch = useAppDispatch();
   const currentPage = useAppSelector(selectCurrentPage);
   const totalPages = Math.min(Math.ceil(count / 12), 100);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [currentPage]);
 
   const goToPage = (page: number) => {
     dispatch(setCurrentPage(page));
