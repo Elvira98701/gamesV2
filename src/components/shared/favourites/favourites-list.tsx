@@ -37,16 +37,16 @@ export const FavouritesList: React.FC<FavouritesListProps> = ({
                 <GameCard
                   key={game.id}
                   game={game}
-                  className="hover:scale-105 transition duration-300 ease-in-out"
+                  className="hover-hover:scale-105 transition duration-300 ease-in-out"
                 />
               ))}
             </div>
             <div className="pt-7 flex justify-center">
               <Button
-                className="bg-primary"
                 onClick={handleClearFavourites}
-                variant="secondary"
                 type="button"
+                className="bg-primary hover-hover:bg-violet-300"
+                variant="secondary"
               >
                 Clear all
               </Button>
@@ -57,7 +57,10 @@ export const FavouritesList: React.FC<FavouritesListProps> = ({
             <p className="flex items-center gap-2 text-lg text-background">
               <Frown />
               No games found. Add{" "}
-              <Link className="underline" to={pageConfig.games}>
+              <Link
+                className="underline hover-hover:text-violet-300 transition-colors"
+                to={pageConfig.games}
+              >
                 games
               </Link>
             </p>

@@ -14,13 +14,19 @@ export const Footer: React.FC = () => {
             <h3 className="footer-title mb-3">Explore</h3>
             <ul className="flex flex-col gap-2">
               <li>
-                <Link to={pageConfig.home}>Home</Link>
+                <Link to={pageConfig.home} className="hover-link">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to={pageConfig.favourites}>Favourites</Link>
+                <Link to={pageConfig.favourites} className="hover-link">
+                  Favourites
+                </Link>
               </li>
               <li>
-                <Link to={pageConfig.games}>Games</Link>
+                <Link to={pageConfig.games} className="hover-link">
+                  Games
+                </Link>
               </li>
             </ul>
           </div>
@@ -32,6 +38,7 @@ export const Footer: React.FC = () => {
                   href="https://discord.com/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover-link"
                 >
                   Discord
                 </a>
@@ -41,6 +48,7 @@ export const Footer: React.FC = () => {
                   href="https://web.telegram.org/a/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover-link"
                 >
                   Telegram
                 </a>
@@ -50,6 +58,7 @@ export const Footer: React.FC = () => {
                   href="https://www.youtube.com/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover-link"
                 >
                   Youtube
                 </a>
@@ -60,12 +69,14 @@ export const Footer: React.FC = () => {
             <h3 className="footer-title mb-3">Contact us</h3>
             <ul className="flex flex-col gap-2">
               <li>
-                <a href="mailto:support@gamesearch.app">
+                <a href="mailto:support@gamesearch.app" className="hover-link">
                   support@gamesearch.app
                 </a>
               </li>
               <li>
-                <a href="mailto:info@gamesearch.app">info@gamesearch.app</a>
+                <a href="mailto:info@gamesearch.app" className="hover-link">
+                  info@gamesearch.app
+                </a>
               </li>
             </ul>
           </div>
@@ -73,10 +84,14 @@ export const Footer: React.FC = () => {
             <h3 className="footer-title mb-3">Legal</h3>
             <ul className="flex flex-col gap-2">
               <li>
-                <a href="#">Privacy Policy</a>
+                <a href="#" className="hover-link">
+                  Privacy Policy
+                </a>
               </li>
               <li>
-                <a href="#">Terms of Service</a>
+                <a href="#" className="hover-link">
+                  Terms of Service
+                </a>
               </li>
             </ul>
           </div>

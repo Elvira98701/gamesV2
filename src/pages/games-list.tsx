@@ -17,7 +17,7 @@ export const GamesList: React.FC = () => {
       <GameCard
         key={game.id}
         game={game}
-        className="hover:scale-105 transition duration-300 ease-in-out"
+        className="hover-hover:scale-105 transition duration-300 ease-in-out"
       />
     ));
   } else if (isError) {

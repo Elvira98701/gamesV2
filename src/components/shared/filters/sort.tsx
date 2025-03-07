@@ -40,7 +40,7 @@ export const Sort: React.FC = () => {
         <SelectGroup>
           <SelectLabel>Sorting</SelectLabel>
           {sortList.map(({ id, name, title, order }) => (
-            <SelectItem key={id} value={name}>
+            <SelectItem key={id} value={name} className="cursor-pointer">
               <span className="flex items-center gap-2">
                 <span>{title}</span>{" "}
                 {order === "desc" ? (

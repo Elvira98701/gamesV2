@@ -14,7 +14,7 @@ export const ContactDialog: React.FC = () => {
 
   return (
     <Dialog>
-      <DialogTrigger className="bg-primary text-foreground inline-flex items-center font-bold uppercase rounded-3xl h-9 px-4 py-2 text-sm">
+      <DialogTrigger className="bg-primary text-foreground inline-flex items-center font-bold uppercase rounded-3xl h-9 px-4 py-2 text-sm transition active:translate-y-1 hover-hover:bg-violet-300">
         Contact us
       </DialogTrigger>
       <DialogContent>

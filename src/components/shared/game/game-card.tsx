@@ -37,6 +37,8 @@ export const GameCard: React.FC<GameCardProps> = ({ className, game }) => {
             alt={game.name}
             className="size-full object-cover absolute top-0 left-0"
             loading="lazy"
+            width={306.66}
+            height={320}
           />
           <div className="p-4 z-10 absolute bottom-0 left-0 w-full">
             <div className="flex justify-between">
@@ -53,7 +55,7 @@ export const GameCard: React.FC<GameCardProps> = ({ className, game }) => {
         type="button"
         title="add to favourites"
         onClick={handleToggleFavourites}
-        className="absolute top-4 right-4 z-20 w-12 h-12 rounded-full bg-background text-foreground hover:bg-foreground hover:text-background"
+        className="absolute top-4 right-4 z-20 w-12 h-12 rounded-full bg-background text-foreground hover-hover:bg-foreground hover-hover:text-background"
       >
         <Heart
           className={cn(existingIndex !== -1 && "fill-red-700 stroke-red-700")}

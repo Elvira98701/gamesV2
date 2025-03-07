@@ -75,7 +75,9 @@
     scrollbar-gutter: stable;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     @apply font-normal uppercase font-accent leading-[1.1];
   }
 }
@@ -186,8 +188,12 @@ h3,
 }
 
 .game-card::after {
-  content: '';
-  background-image: linear-gradient(to top, rgb(0 0 0 / 0.7), rgb(0 0 0 / 0) 30%);
+  content: "";
+  background-image: linear-gradient(
+    to top,
+    rgb(0 0 0 / 0.7),
+    rgb(0 0 0 / 0) 30%
+  );
   position: absolute;
   inset: 0;
 }
@@ -197,8 +203,19 @@ h3,
 }
 
 .bento-card::after {
-  content: '';
-  background-image: linear-gradient(to bottom, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0) 60%);
+  content: "";
+  background-image: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0.6),
+    rgb(0 0 0 / 0) 60%
+  );
   position: absolute;
   inset: 0;
+}
+
+.hover-link {
+  @apply relative inline-block after:content-[''] after:absolute after:w-full after:h-[1px] after:bottom-0 
+  after:left-0 after:bg-foreground
+  after:scale-x-0 focus-visible:ring-1 focus-visible:ring-ring hover-hover:after:scale-x-100 after:transition-transform 
+  after:duration-300;
 }
