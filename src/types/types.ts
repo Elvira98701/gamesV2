@@ -3,7 +3,7 @@ import { z } from "zod";
 export const gameSchema = z.object({
   id: z.number(),
   name: z.string(),
-  released: z.string(),
+  released: z.string().nullable(),
   background_image: z.string().url(),
   rating: z.number(),
   platforms: z.array(
@@ -27,7 +27,7 @@ export const gameDetailsSchema = gameSchema.extend({
   movies_count: z.number(),
   screenshots_count: z.number(),
   website: z.string().url().nullable(),
-  metacritic: z.number(),
+  metacritic: z.number().nullable(),
   genres: z.array(
     z.object({
       id: z.number(),

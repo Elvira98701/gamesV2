@@ -49,7 +49,11 @@ export const GameHero: React.FC<GameHeroProps> = ({ game }) => {
             <h1 className="title-small z-10 relative max-w-max">{game.name}</h1>
             <div className="flex items-center z-10 relative">
               {game.website && (
-                <ButtonLink href={game.website} target="_blank">
+                <ButtonLink
+                  href={game.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Website
                 </ButtonLink>
               )}

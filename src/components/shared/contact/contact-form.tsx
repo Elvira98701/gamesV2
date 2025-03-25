@@ -1,9 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
-import { formSchema } from "@/types/types";
+import { ContactFormValues, formSchema } from "@/types/types";
 import { Button, Form, Input, Textarea } from "@/components/ui";
 import {
   FormControl,
@@ -22,7 +21,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   className,
   setIsSuccess,
 }) => {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
@@ -31,7 +30,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: ContactFormValues) {
     console.log(values);
     setIsSuccess(true);
     form.reset();

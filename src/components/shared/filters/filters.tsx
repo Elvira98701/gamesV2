@@ -30,7 +30,7 @@ export const Filters: React.FC<FiltersProps> = ({ className }) => {
   };
 
   return (
-    <aside className={cn("", className)}>
+    <aside className={cn("", className)} aria-label="Filters">
       <Genres className="mb-5" />
       <Platforms className="mb-5" />
       <Developers className="mb-5" />

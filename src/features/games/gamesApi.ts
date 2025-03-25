@@ -1,3 +1,5 @@
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { BASE_URL } from "@/utils/constants";
 import {
   DevelopersResponse,
   GameDetails,
@@ -7,8 +9,6 @@ import {
   PlatfromsResponse,
   ScreenshotsResponse,
 } from "@/types/types";
-import { BASE_URL } from "@/utils/constants";
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 interface IParams {
   genres: number[];

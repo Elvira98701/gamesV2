@@ -1,6 +1,7 @@
-import { Game } from "@/types/types";
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../store";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import type { RootState } from "../store";
+import { Game } from "@/types/types";
 
 const loadFromLocalStorage = (): Game[] => {
   try {
@@ -18,7 +19,7 @@ const favouritesSlice = createSlice({
   name: "favourites",
   initialState,
   reducers: {
-    favouritesToggled(state, action) {
+    favouritesToggled(state, action: PayloadAction<Game>) {
       const existingIndex = state.findIndex(
         (obj) => obj.id === action.payload.id
       );

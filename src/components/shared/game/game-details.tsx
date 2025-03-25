@@ -10,7 +10,7 @@ import { Button } from "@/components/ui";
 gsap.registerPlugin(ScrollTrigger);
 
 interface GameDetailsProps {
-  released: string;
+  released: string | null;
   rating: number;
   platforms: Game["platforms"];
   genres: Details["genres"];
@@ -18,7 +18,7 @@ interface GameDetailsProps {
   playtime: number;
   image: string | null;
   description: string;
-  metacritic: number;
+  metacritic: number | null;
 }
 
 export const GameDetails: React.FC<GameDetailsProps> = ({
@@ -107,7 +107,9 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
                 <h3 className="text-xl pb-3 flex items-center gap-2">
                   <Calendar size={18} /> Released:
                 </h3>
-                <span className="text-zinc-400">{released}</span>
+                <span className="text-zinc-400">
+                  {!released ? "-" : released}
+                </span>
               </div>
               <div>
                 <h3 className="text-xl pb-3 flex items-center gap-2">
@@ -125,7 +127,9 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
                 <h3 className="text-xl pb-3 flex items-center gap-2">
                   <Brain size={18} /> Metacritic:
                 </h3>
-                <div className="text-zinc-400">{metacritic}</div>
+                <div className="text-zinc-400">
+                  {!metacritic ? "-" : metacritic}
+                </div>
               </div>
               <div>
                 <h3 className="text-xl pb-3 flex items-center gap-2">
@@ -140,7 +144,9 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
                   <Wrench size={18} /> Developer:
                 </h3>
                 <div className="text-zinc-400">
-                  {developers.map((developer) => developer.name).join(", ")}
+                  {developers.length > 0
+                    ? developers.map((developer) => developer.name).join(", ")
+                    : "-"}
                 </div>
               </div>
             </div>

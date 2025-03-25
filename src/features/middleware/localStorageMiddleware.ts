@@ -1,4 +1,4 @@
-import { Middleware } from "@reduxjs/toolkit";
+import type { Middleware } from "@reduxjs/toolkit";
 
 interface LocalStorageMiddlewareOptions {
   key: string;
