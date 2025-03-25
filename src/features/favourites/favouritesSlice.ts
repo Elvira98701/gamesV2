@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
 import { Game } from "@/types/types";
@@ -40,3 +40,7 @@ export const { favouritesToggled, favouritesCleared } = favouritesSlice.actions;
 export default favouritesSlice.reducer;
 
 export const selectFavourites = (state: RootState) => state.favourites;
+export const selectFavouriteGameById = createSelector(
+  [selectFavourites, (_: RootState, gameId: number) => gameId],
+  (games, gameId) => games.find((game) => game.id === gameId)
+);

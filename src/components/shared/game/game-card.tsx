@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import {
   favouritesToggled,
-  selectFavourites,
+  selectFavouriteGameById,
 } from "@/features/favourites/favouritesSlice";
 import { Game } from "@/types/types";
 import { Button, Card } from "@/components/ui";
@@ -18,8 +18,9 @@ interface GameCardProps {
 
 export const GameCard: React.FC<GameCardProps> = ({ className, game }) => {
   const dispatch = useAppDispatch();
-  const favourites = useAppSelector(selectFavourites);
-  const existingIndex = favourites.findIndex((item) => item.id === game.id);
+  const existingGame = useAppSelector((state) =>
+    selectFavouriteGameById(state, game.id)
+  );
 
   const handleToggleFavourites = (
     event: React.MouseEvent<HTMLButtonElement>
@@ -57,9 +58,7 @@ export const GameCard: React.FC<GameCardProps> = ({ className, game }) => {
         onClick={handleToggleFavourites}
         className="absolute top-4 right-4 z-20 w-12 h-12 rounded-full bg-background text-foreground hover-hover:bg-foreground hover-hover:text-background"
       >
-        <Heart
-          className={cn(existingIndex !== -1 && "fill-red-700 stroke-red-700")}
-        />
+        <Heart className={cn(existingGame && "fill-red-700 stroke-red-700")} />
       </Button>
     </Card>
   );

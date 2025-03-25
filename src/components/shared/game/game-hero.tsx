@@ -7,7 +7,7 @@ import { Heart } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import {
   favouritesToggled,
-  selectFavourites,
+  selectFavouriteGameById,
 } from "@/features/favourites/favouritesSlice";
 import { GameDetails } from "@/types/types";
 import { Container } from "@/components/shared";
@@ -21,8 +21,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const GameHero: React.FC<GameHeroProps> = ({ game }) => {
   const dispatch = useAppDispatch();
-  const favourites = useAppSelector(selectFavourites);
-  const existingIndex = favourites.findIndex((item) => item.id === game.id);
+  const existingGame = useAppSelector((state) =>
+    selectFavouriteGameById(state, game.id)
+  );
 
   useGSAP(() => {
     gsap.to("#hero-frame", {
@@ -64,9 +65,7 @@ export const GameHero: React.FC<GameHeroProps> = ({ game }) => {
                 onClick={handleToggleFavourites}
               >
                 <Heart
-                  className={cn(
-                    existingIndex !== -1 && "fill-red-700 stroke-red-700"
-                  )}
+                  className={cn(existingGame && "fill-red-700 stroke-red-700")}
                 />
               </Button>
             </div>
