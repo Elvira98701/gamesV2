@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Frown } from "lucide-react";
 import {
@@ -14,9 +13,7 @@ interface FavouritesListProps {
   className?: string;
 }
 
-export const FavouritesList: React.FC<FavouritesListProps> = ({
-  className,
-}) => {
+export const FavouritesList = ({ className }: FavouritesListProps) => {
   const dispatch = useAppDispatch();
   const favourites = useAppSelector(selectFavourites);
 

@@ -1,7 +1,6 @@
-import React from "react";
 import { BentoTilt } from "./bento/bento-tilt";
 
-const LazyVideo: React.FC = () => {
+const LazyVideo = () => {
   return (
     <BentoTilt className="rounded-xl col-span-2 md:col-span-1">
       <video

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Dialog } from "@/components/ui";
 import {
   DialogContent,
@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { ContactForm } from "./contact-form";
 
-export const ContactDialog: React.FC = () => {
+export const ContactDialog = () => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   return (

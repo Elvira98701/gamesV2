@@ -1,4 +1,4 @@
-import React from "react";
+import type { MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import { Heart, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -16,15 +16,13 @@ interface GameCardProps {
   game: Game;
 }
 
-export const GameCard: React.FC<GameCardProps> = ({ className, game }) => {
+export const GameCard = ({ className, game }: GameCardProps) => {
   const dispatch = useAppDispatch();
   const existingGame = useAppSelector((state) =>
     selectFavouriteGameById(state, game.id)
   );
 
-  const handleToggleFavourites = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleToggleFavourites = (event: MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     dispatch(favouritesToggled(game));
   };

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -13,7 +13,7 @@ import { useMedia } from "react-use";
 gsap.registerPlugin(ScrollTrigger);
 const LazyVideo = lazy(() => import("./lazy-video"));
 
-export const Features: React.FC = () => {
+export const Features = () => {
   const [loaded, setLoaded] = useState(false);
   const isWide = useMedia("(min-width: 1300px)");
 

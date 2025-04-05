@@ -1,4 +1,3 @@
-import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -19,7 +18,7 @@ interface GameHeroProps {
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const GameHero: React.FC<GameHeroProps> = ({ game }) => {
+export const GameHero = ({ game }: GameHeroProps) => {
   const dispatch = useAppDispatch();
   const existingGame = useAppSelector((state) =>
     selectFavouriteGameById(state, game.id)

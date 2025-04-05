@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useGetDevelopersQuery } from "@/features/games/gamesApi";
 import { Developer } from "@/types/types";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
@@ -12,7 +12,7 @@ interface DevelopersProps {
   className?: string;
 }
 
-export const Developers: React.FC<DevelopersProps> = ({ className }) => {
+export const Developers = ({ className }: DevelopersProps) => {
   const dispatch = useAppDispatch();
   const tempDevelopers = useAppSelector(selectTempDevelopers);
   const [showAll, setShowAll] = useState(false);

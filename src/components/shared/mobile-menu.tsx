@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Ellipsis } from "lucide-react";
 import {
@@ -16,10 +16,7 @@ interface MobileMenuProps {
   pagesList: IPageItem[];
 }
 
-export const MobileMenu: React.FC<MobileMenuProps> = ({
-  className,
-  pagesList,
-}) => {
+export const MobileMenu = ({ className, pagesList }: MobileMenuProps) => {
   const [open, setOpen] = useState(false);
 
   return (

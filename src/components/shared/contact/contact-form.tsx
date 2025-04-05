@@ -1,4 +1,3 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
@@ -17,10 +16,7 @@ interface ContactFormProps {
   setIsSuccess: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const ContactForm: React.FC<ContactFormProps> = ({
-  className,
-  setIsSuccess,
-}) => {
+export const ContactForm = ({ className, setIsSuccess }: ContactFormProps) => {
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {

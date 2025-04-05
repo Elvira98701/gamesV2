@@ -1,4 +1,3 @@
-import React from "react";
 import { SlidersHorizontal } from "lucide-react";
 import { Dialog } from "@/components/ui";
 import {
@@ -10,7 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { Filters } from "./filters";
 
-export const FilterDialog: React.FC = () => {
+export const FilterDialog = () => {
   return (
     <Dialog>
       <DialogTrigger className="bg-background text-foreground border shadow-sm transition inline-flex items-center font-bold uppercase rounded-full px-4 py-2 text-sm">

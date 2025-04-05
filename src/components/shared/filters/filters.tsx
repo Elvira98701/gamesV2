@@ -1,4 +1,3 @@
-import React from "react";
 import { cn } from "@/lib/utils";
 import { useAppDispatch } from "@/features/hooks";
 import {
@@ -16,7 +15,7 @@ interface FiltersProps {
   className?: string;
 }
 
-export const Filters: React.FC<FiltersProps> = ({ className }) => {
+export const Filters = ({ className }: FiltersProps) => {
   const dispatch = useAppDispatch();
 
   const handleResetFilters = () => {

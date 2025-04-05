@@ -4,7 +4,7 @@ import { useMedia } from "react-use";
 import { Container } from "../container";
 import { ContactDialog } from "./contact-dialog";
 
-export const Contact: React.FC = () => {
+export const Contact = () => {
   const frameRef = useRef<HTMLImageElement>(null);
   const isWide = useMedia("(min-width: 1050px)");
 

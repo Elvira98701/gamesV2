@@ -1,4 +1,3 @@
-import React from "react";
 import { cn } from "@/lib/utils";
 
 interface BentoCardProps {
@@ -8,12 +7,12 @@ interface BentoCardProps {
   description?: string;
 }
 
-export const BentoCard: React.FC<BentoCardProps> = ({
+export const BentoCard = ({
   className,
   src,
   title,
   description,
-}) => {
+}: BentoCardProps) => {
   return (
     <div className={cn("relative size-full", className)}>
       <img

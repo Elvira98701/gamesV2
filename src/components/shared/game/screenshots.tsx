@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useGetScreenshotsByIdQuery } from "@/features/games/gamesApi";
 import { Screenshot } from "@/types/types";
@@ -18,7 +18,7 @@ interface ScreenshotsProps {
   id: number;
 }
 
-export const Screenshots: React.FC<ScreenshotsProps> = ({ className, id }) => {
+export const Screenshots = ({ className, id }: ScreenshotsProps) => {
   const { data, isLoading, error } = useGetScreenshotsByIdQuery(id);
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);

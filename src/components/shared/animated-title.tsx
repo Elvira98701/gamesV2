@@ -1,4 +1,3 @@
-import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -7,7 +6,7 @@ interface AnimatedTitleProps {
   className?: string;
 }
 
-export const AnimatedTitle: React.FC<AnimatedTitleProps> = ({ title }) => {
+export const AnimatedTitle = ({ title }: AnimatedTitleProps) => {
   useGSAP(() => {
     gsap.to(".animated-word", {
       opacity: 1,

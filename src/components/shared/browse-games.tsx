@@ -1,7 +1,6 @@
-import React from "react";
 import { Container } from "./container";
 
-export const BrowseGames: React.FC = () => {
+export const BrowseGames = () => {
   return (
     <section>
       <Container className="flex items-center justify-center text-center">

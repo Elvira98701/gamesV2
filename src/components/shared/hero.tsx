@@ -1,4 +1,3 @@
-import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -8,7 +7,7 @@ import { AnimatedTitle } from "./animated-title";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const Hero: React.FC = () => {
+export const Hero = () => {
   useGSAP(() => {
     gsap.to("#video-frame", {
       scale: 0.3,

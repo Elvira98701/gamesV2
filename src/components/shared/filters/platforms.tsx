@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useGetPlatformsQuery } from "@/features/games/gamesApi";
 import { Platform } from "@/types/types";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
@@ -12,7 +12,7 @@ interface PlatformsProps {
   className?: string;
 }
 
-export const Platforms: React.FC<PlatformsProps> = ({ className }) => {
+export const Platforms = ({ className }: PlatformsProps) => {
   const dispatch = useAppDispatch();
   const tempPlatforms = useAppSelector(selectTempPlatforms);
   const [showAll, setShowAll] = useState(false);

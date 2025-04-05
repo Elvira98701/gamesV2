@@ -1,4 +1,3 @@
-import React from "react";
 import { CardSkeleton, Carousel } from "@/components/ui";
 import {
   CarouselContent,
@@ -10,7 +9,7 @@ import { Container, GameCard } from "@/components/shared";
 import { useGetSliderGamesQuery } from "@/features/games/gamesApi";
 import { Game } from "@/types/types";
 
-export const GamesSlider: React.FC = () => {
+export const GamesSlider = () => {
   const { data, error, isLoading } = useGetSliderGamesQuery();
 
   if (error)

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { Logo, NavigationMenu } from "@/components/ui";
@@ -19,7 +19,7 @@ const navItems: IPageItem[] = [
   },
 ];
 
-export const Header: React.FC = () => {
+export const Header = () => {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const navContainerRef = useRef<HTMLDivElement>(null);

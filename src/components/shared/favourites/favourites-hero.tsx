@@ -1,10 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { pageConfig } from "@/utils/pages.config";
 import { Container, BentoTilt, AnimatedTitle } from "@/components/shared";
 import { Logo } from "@/components/ui";
 
-export const FavouritesHero: React.FC = () => {
+export const FavouritesHero = () => {
   return (
     <section className="pb-4 pt-7 md:py-7 overflow-hidden">
       <Container className="h-[50vh] flex justify-center gap-4 md:gap-7">

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Pagination } from "@/components/ui";
 import {
   PaginationContent,
@@ -18,7 +18,7 @@ interface GamesPaginationProps {
   count: number;
 }
 
-export const GamesPagination: React.FC<GamesPaginationProps> = ({ count }) => {
+export const GamesPagination = ({ count }: GamesPaginationProps) => {
   const dispatch = useAppDispatch();
   const currentPage = useAppSelector(selectCurrentPage);
   const totalPages = Math.min(Math.ceil(count / 12), 100);

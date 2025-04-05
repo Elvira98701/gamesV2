@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { Brain, Calendar, Clock4, Grid2x2, Star, Wrench } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -21,7 +21,7 @@ interface GameDetailsProps {
   metacritic: number | null;
 }
 
-export const GameDetails: React.FC<GameDetailsProps> = ({
+export const GameDetails = ({
   released,
   rating,
   platforms,
@@ -31,7 +31,7 @@ export const GameDetails: React.FC<GameDetailsProps> = ({
   image,
   description,
   metacritic,
-}) => {
+}: GameDetailsProps) => {
   const platformsRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLLIElement | null)[]>([]);
   const [isShowMore, setIsShowMore] = useState(false);

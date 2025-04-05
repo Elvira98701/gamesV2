@@ -1,15 +1,13 @@
-import React, { useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useTouch } from "@/hooks";
 
 interface BentoTiltProps {
   className?: string;
+  children?: ReactNode;
 }
 
-export const BentoTilt: React.FC<React.PropsWithChildren<BentoTiltProps>> = ({
-  className,
-  children,
-}) => {
+export const BentoTilt = ({ className, children }: BentoTiltProps) => {
   const [transformStyle, setTransformStyle] = useState("");
   const itemRef = useRef<HTMLDivElement>(null);
   const isTouch = useTouch();

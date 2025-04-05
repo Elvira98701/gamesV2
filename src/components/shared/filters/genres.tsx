@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import { selectTempGenres, toggleGenre } from "@/features/filter/filterSlice";
 import { useGetGenresQuery } from "@/features/games/gamesApi";
@@ -9,7 +9,7 @@ interface GenresProps {
   className?: string;
 }
 
-export const Genres: React.FC<GenresProps> = ({ className }) => {
+export const Genres = ({ className }: GenresProps) => {
   const dispatch = useAppDispatch();
   const [showAll, setShowAll] = useState(false);
   const tempGenres = useAppSelector(selectTempGenres);

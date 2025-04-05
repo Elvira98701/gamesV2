@@ -1,12 +1,11 @@
 import { cn } from "@/lib/utils";
-import React from "react";
 import { Link } from "react-router-dom";
 
 interface LogoProps {
   className?: string;
 }
 
-export const Logo: React.FC<LogoProps> = ({ className }) => {
+export const Logo = ({ className }: LogoProps) => {
   return (
     <Link to="/" className={cn("", className)} aria-label="Home" title="Home">
       <svg

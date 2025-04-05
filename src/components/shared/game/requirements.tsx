@@ -1,6 +1,5 @@
-import React from "react";
 import { Container } from "../container";
-import { parseSystemRequirements } from "@/utils/parseSystemRequirements";
+import { parseSystemRequirements } from "@/utils/parse-system-requirements";
 
 interface Requirements {
   minimum?: string;
@@ -11,7 +10,7 @@ interface RequirementsProps {
   requirements: Requirements;
 }
 
-export const Requirements: React.FC<RequirementsProps> = ({ requirements }) => {
+export const Requirements = ({ requirements }: RequirementsProps) => {
   const parsedMinimum = requirements.minimum
     ? parseSystemRequirements(requirements.minimum)
     : null;

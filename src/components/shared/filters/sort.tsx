@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import { MoveDown, MoveUp } from "lucide-react";
 import { selectOrder, setOrder } from "@/features/filter/filterSlice";
@@ -23,7 +22,7 @@ const sortList = [
   { id: 8, name: "released", title: "Released", order: "asc" },
 ];
 
-export const Sort: React.FC = () => {
+export const Sort = () => {
   const dispatch = useAppDispatch();
   const order = useAppSelector(selectOrder);
 

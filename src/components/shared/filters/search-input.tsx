@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import type { ReactNode } from "react";
+import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useClickAway, useDebounce } from "react-use";
 import { Link } from "react-router-dom";
@@ -16,7 +17,7 @@ interface SearchInputProps {
   className?: string;
 }
 
-export const SearchInput: React.FC<SearchInputProps> = ({ className }) => {
+export const SearchInput = ({ className }: SearchInputProps) => {
   const dispatch = useAppDispatch();
   const searchValue = useAppSelector(selectSearchValue);
   const [focused, setFocused] = useState(false);
@@ -41,7 +42,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({ className }) => {
     [inputValue]
   );
 
-  let content: React.ReactNode;
+  let content: ReactNode;
 
   if (isLoading) {
     content = <p>Loading...</p>;

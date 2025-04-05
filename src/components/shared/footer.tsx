@@ -1,10 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "./container";
 import { Logo } from "@/components/ui";
 import { pageConfig } from "@/utils/pages.config";
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
   return (
     <footer className="bg-primary pt-16 pb-4 lg:pt-28 lg:pb-8 text-base lg:text-xl text-center md:text-left">
       <Container>
