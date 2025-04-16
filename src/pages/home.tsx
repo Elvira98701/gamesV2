@@ -1,4 +1,3 @@
-import React from "react";
 import {
   BrowseGames,
   Contact,
@@ -7,7 +6,7 @@ import {
   Hero,
 } from "@/components/shared";
 
-export const Home: React.FC = () => {
+export const Home = () => {
   return (
     <main>
       <Hero />

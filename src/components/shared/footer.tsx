@@ -95,9 +95,22 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-        <small className="uppercase text-xs">
-          ©GameFinder 2025. All rights reserved
-        </small>
+        <div className="flex justify-between items-center flex-col md:flex-row gap-1">
+          <small className="uppercase text-xs">
+            ©GameFinder 2025. All rights reserved
+          </small>
+          <p>
+            Data provided by{" "}
+            <a
+              href="https://rawg.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              RAWG Video Games Database
+            </a>
+          </p>
+        </div>
       </Container>
     </footer>
   );

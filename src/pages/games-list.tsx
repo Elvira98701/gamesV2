@@ -1,13 +1,13 @@
-import React from "react";
+import type { ReactNode } from "react";
 import { Game } from "@/types/types";
 import { useGamesWithFilters } from "@/hooks";
 import { GameCard, GamesPagination } from "@/components/shared";
 import { CardSkeleton } from "@/components/ui";
 
-export const GamesList: React.FC = () => {
+export const GamesList = () => {
   const { data, isLoading, isSuccess, isError } = useGamesWithFilters();
 
-  let content: React.ReactNode;
+  let content: ReactNode;
 
   if (isLoading) {
     content = Array.from({ length: 16 }, (_, i) => <CardSkeleton key={i} />);

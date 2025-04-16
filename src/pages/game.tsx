@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import { Loader } from "lucide-react";
 import {
@@ -10,7 +9,7 @@ import {
 } from "@/components/shared";
 import { useGetGameByIdQuery } from "@/features/games/gamesApi";
 
-export const Game: React.FC = () => {
+export const Game = () => {
   const { id } = useParams();
   const { data, isLoading, error } = useGetGameByIdQuery(Number(id));
 

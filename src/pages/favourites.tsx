@@ -1,7 +1,6 @@
-import React from "react";
 import { Contact, FavouritesHero, FavouritesList } from "@/components/shared";
 
-export const Favourites: React.FC = () => {
+export const Favourites = () => {
   return (
     <main className="bg-foreground">
       <FavouritesHero />

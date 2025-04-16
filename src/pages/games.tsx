@@ -1,4 +1,3 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import { useMedia } from "react-use";
 import {
@@ -9,7 +8,7 @@ import {
   Sort,
 } from "@/components/shared";
 
-export const Games: React.FC = () => {
+export const Games = () => {
   const isWide = useMedia("(min-width: 768px)");
 
   return (
