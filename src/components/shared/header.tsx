@@ -5,21 +5,7 @@ import { useWindowScroll } from "react-use";
 
 import { MobileMenu } from "@/components/shared";
 import { Logo, NavigationMenu } from "@/components/ui";
-import { pageConfig } from "@/constants";
-import { IPageItem } from "@/types/types";
-
-const navItems: IPageItem[] = [
-  {
-    id: 1,
-    href: pageConfig.favourites,
-    title: "Favourites",
-  },
-  {
-    id: 2,
-    href: pageConfig.games,
-    title: "Games",
-  },
-];
+import { navItems } from "@/constants";
 
 export const Header = () => {
   const [isNavVisible, setIsNavVisible] = useState(true);
