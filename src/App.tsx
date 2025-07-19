@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import { pageConfig } from "./utils/pages.config";
-import ScrollToTop from "./utils/scroll-to-top";
+
 import { Footer, Header } from "@/components/shared";
+import { pageConfig } from "@/constants";
 import { Favourites, Game, Games, GamesList, Home } from "@/pages";
+import { ScrollToTop } from "@/utils";
 
 export const App = () => {
   return (

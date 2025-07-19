@@ -2,8 +2,8 @@ import {
   BrowseGames,
   Contact,
   Features,
-  GamesSlider,
   Hero,
+  GamesSlider,
 } from "@/components/shared";
 
 export const Home = () => {

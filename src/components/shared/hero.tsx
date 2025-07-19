@@ -1,9 +1,9 @@
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+
+import { Container, AnimatedTitle } from "@/components/shared";
 import { ButtonLink } from "@/components/ui";
-import { Container } from "./container";
-import { AnimatedTitle } from "./animated-title";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom";
 import { Frown } from "lucide-react";
-import {
-  favouritesCleared,
-  selectFavourites,
-} from "@/features/favourites/favouritesSlice";
-import { useAppDispatch, useAppSelector } from "@/features/hooks";
-import { pageConfig } from "@/utils/pages.config";
+import { Link } from "react-router-dom";
+
 import { Container, GameCard } from "@/components/shared";
 import { Button } from "@/components/ui";
+import { pageConfig } from "@/constants";
+import { favouritesCleared, selectFavourites } from "@/features/favourites";
+import { useAppDispatch, useAppSelector } from "@/features/hooks";
 
 interface FavouritesListProps {
   className?: string;

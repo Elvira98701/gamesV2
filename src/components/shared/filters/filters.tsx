@@ -1,15 +1,13 @@
-import { cn } from "@/lib/utils";
-import { useAppDispatch } from "@/features/hooks";
+import { Developers, Genres, Platforms } from "@/components/shared";
+import { Button } from "@/components/ui";
 import {
   applyFilters,
   resetFilters,
   setCurrentPage,
   setSearchValue,
-} from "@/features/filter/filterSlice";
-import { Genres } from "./genres";
-import { Platforms } from "./platforms";
-import { Developers } from "./developers";
-import { Button } from "@/components/ui";
+} from "@/features/filter";
+import { useAppDispatch } from "@/features/hooks";
+import { cn } from "@/lib/utils";
 
 interface FiltersProps {
   className?: string;

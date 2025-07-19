@@ -1,16 +1,17 @@
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { cn } from "@/lib/utils";
 import { Heart } from "lucide-react";
-import { useAppDispatch, useAppSelector } from "@/features/hooks";
+
+import { Container } from "@/components/shared";
+import { Button, ButtonLink } from "@/components/ui";
 import {
   favouritesToggled,
   selectFavouriteGameById,
-} from "@/features/favourites/favouritesSlice";
+} from "@/features/favourites";
+import { useAppDispatch, useAppSelector } from "@/features/hooks";
+import { cn } from "@/lib/utils";
 import { GameDetails } from "@/types/types";
-import { Container } from "@/components/shared";
-import { Button, ButtonLink } from "@/components/ui";
 
 interface GameHeroProps {
   game: GameDetails;

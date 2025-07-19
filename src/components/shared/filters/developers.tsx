@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { useGetDevelopersQuery } from "@/features/games/gamesApi";
-import { Developer } from "@/types/types";
-import { useAppDispatch, useAppSelector } from "@/features/hooks";
-import {
-  selectTempDevelopers,
-  toggleDeveloper,
-} from "@/features/filter/filterSlice";
+
 import { Button, Checkbox, FilterSkeleton, Label } from "@/components/ui";
+import { selectTempDevelopers, toggleDeveloper } from "@/features/filter";
+import { useGetDevelopersQuery } from "@/features/games/gamesApi";
+import { useAppDispatch, useAppSelector } from "@/features/hooks";
+import { Developer } from "@/types/types";
 
 interface DevelopersProps {
   className?: string;

@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { useGetPlatformsQuery } from "@/features/games/gamesApi";
-import { Platform } from "@/types/types";
-import { useAppDispatch, useAppSelector } from "@/features/hooks";
-import {
-  selectTempPlatforms,
-  togglePlatform,
-} from "@/features/filter/filterSlice";
+
 import { Button, Checkbox, FilterSkeleton, Label } from "@/components/ui";
+import { selectTempPlatforms, togglePlatform } from "@/features/filter";
+import { useGetPlatformsQuery } from "@/features/games/gamesApi";
+import { useAppDispatch, useAppSelector } from "@/features/hooks";
+import { Platform } from "@/types/types";
 
 interface PlatformsProps {
   className?: string;

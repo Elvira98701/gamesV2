@@ -1,14 +1,14 @@
 import { lazy, Suspense, useState } from "react";
-import { Link } from "react-router-dom";
-import gsap from "gsap";
+
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { Container } from "./container";
-import { BentoTilt } from "./bento/bento-tilt";
-import { BentoCard } from "./bento/bento-card";
-import { Logo } from "@/components/ui";
-import { pageConfig } from "@/utils/pages.config";
+import { Link } from "react-router-dom";
 import { useMedia } from "react-use";
+
+import { Container, BentoCard, BentoTilt } from "@/components/shared";
+import { Logo } from "@/components/ui";
+import { pageConfig } from "@/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 const LazyVideo = lazy(() => import("./lazy-video"));

@@ -1,4 +1,4 @@
-import { BentoTilt } from "./bento/bento-tilt";
+import { BentoTilt } from "@/components/shared";
 
 const LazyVideo = () => {
   return (

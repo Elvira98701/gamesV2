@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Container } from "./container";
+
+import { Container } from "@/components/shared";
 import { Logo } from "@/components/ui";
-import { pageConfig } from "@/utils/pages.config";
+import { pageConfig } from "@/constants";
 
 export const Footer = () => {
   return (

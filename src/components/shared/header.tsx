@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
+
 import gsap from "gsap";
 import { useWindowScroll } from "react-use";
+
+import { MobileMenu } from "@/components/shared";
 import { Logo, NavigationMenu } from "@/components/ui";
+import { pageConfig } from "@/constants";
 import { IPageItem } from "@/types/types";
-import { pageConfig } from "@/utils/pages.config";
-import { MobileMenu } from "./mobile-menu";
 
 const navItems: IPageItem[] = [
   {

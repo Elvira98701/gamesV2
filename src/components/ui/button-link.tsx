@@ -1,10 +1,11 @@
 import * as React from "react";
+
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
 
 const linkVariants = cva(
   "group relative overflow-hidden uppercase inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-bold focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",

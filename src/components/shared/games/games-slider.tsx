@@ -1,11 +1,12 @@
-import { CardSkeleton, Carousel } from "@/components/ui";
+import { Container, GameCard } from "@/components/shared";
 import {
+  CardSkeleton,
+  Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Container, GameCard } from "@/components/shared";
+} from "@/components/ui";
 import { useGetSliderGamesQuery } from "@/features/games/gamesApi";
 import { Game } from "@/types/types";
 

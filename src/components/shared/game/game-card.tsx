@@ -1,15 +1,16 @@
 import type { MouseEvent } from "react";
-import { Link } from "react-router-dom";
+
 import { Heart, Star } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useAppDispatch, useAppSelector } from "@/features/hooks";
+import { Link } from "react-router-dom";
+
+import { Button, Card, CardContent } from "@/components/ui";
 import {
   favouritesToggled,
   selectFavouriteGameById,
-} from "@/features/favourites/favouritesSlice";
+} from "@/features/favourites";
+import { useAppDispatch, useAppSelector } from "@/features/hooks";
+import { cn } from "@/lib/utils";
 import { Game } from "@/types/types";
-import { Button, Card } from "@/components/ui";
-import { CardContent } from "@/components/ui/card";
 
 interface GameCardProps {
   className?: string;

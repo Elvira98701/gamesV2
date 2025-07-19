@@ -1,15 +1,19 @@
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { cn } from "@/lib/utils";
-import { ContactFormValues, formSchema } from "@/types/types";
-import { Button, Form, Input, Textarea } from "@/components/ui";
+import { useForm } from "react-hook-form";
+
 import {
+  Button,
+  Form,
+  Input,
+  Textarea,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "@/components/ui";
+import { cn } from "@/lib/utils";
+import { ContactFormValues, formSchema } from "@/types/types";
 
 interface ContactFormProps {
   className?: string;

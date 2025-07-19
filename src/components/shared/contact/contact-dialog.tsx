@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { Dialog } from "@/components/ui";
+
 import {
+  Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui";
+
 import { ContactForm } from "./contact-form";
 
 export const ContactDialog = () => {

@@ -3,8 +3,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import favouritesReducer from "@/features/favourites/favouritesSlice";
 import filterReducer from "@/features/filter/filterSlice";
 
-import { gamesApi } from "./games/gamesApi";
 import { favouritesMiddleware } from "./favourites/favouritesMiddleware";
+import { gamesApi } from "./games/gamesApi";
 
 export const store = configureStore({
   reducer: {

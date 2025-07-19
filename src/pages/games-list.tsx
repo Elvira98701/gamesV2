@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
-import { Game } from "@/types/types";
-import { useGamesWithFilters } from "@/hooks";
+
 import { GameCard, GamesPagination } from "@/components/shared";
 import { CardSkeleton } from "@/components/ui";
+import { useGamesWithFilters } from "@/hooks";
+import { Game } from "@/types/types";
 
 export const GamesList = () => {
   const { data, isLoading, isSuccess, isError } = useGamesWithFilters();

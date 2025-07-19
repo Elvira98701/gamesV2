@@ -1,15 +1,16 @@
-import { useAppDispatch, useAppSelector } from "@/features/hooks";
 import { MoveDown, MoveUp } from "lucide-react";
-import { selectOrder, setOrder } from "@/features/filter/filterSlice";
-import { Select } from "@/components/ui";
+
 import {
+  Select,
   SelectContent,
   SelectGroup,
   SelectItem,
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui";
+import { selectOrder, setOrder } from "@/features/filter";
+import { useAppDispatch, useAppSelector } from "@/features/hooks";
 
 const sortList = [
   { id: 1, name: "-added", title: "Popularity", order: "desc" },

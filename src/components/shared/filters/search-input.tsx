@@ -1,16 +1,15 @@
 import type { ReactNode } from "react";
 import { useRef, useState } from "react";
-import { cn } from "@/lib/utils";
-import { useClickAway, useDebounce } from "react-use";
-import { Link } from "react-router-dom";
+
 import { Frown, Search } from "lucide-react";
-import { useAppDispatch, useAppSelector } from "@/features/hooks";
-import {
-  selectSearchValue,
-  setSearchValue,
-} from "@/features/filter/filterSlice";
+import { Link } from "react-router-dom";
+import { useClickAway, useDebounce } from "react-use";
+
 import { Input } from "@/components/ui";
+import { selectSearchValue, setSearchValue } from "@/features/filter";
 import { useGetSearchQuery } from "@/features/games/gamesApi";
+import { useAppDispatch, useAppSelector } from "@/features/hooks";
+import { cn } from "@/lib/utils";
 import { Game } from "@/types/types";
 
 interface SearchInputProps {

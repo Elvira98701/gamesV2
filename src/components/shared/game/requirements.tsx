@@ -1,5 +1,5 @@
-import { Container } from "../container";
-import { parseSystemRequirements } from "@/utils/parse-system-requirements";
+import { Container } from "@/components/shared";
+import { parseSystemRequirements } from "@/utils";
 
 interface Requirements {
   minimum?: string;

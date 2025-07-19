@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { pageConfig } from "@/utils/pages.config";
+
 import { Container, BentoTilt, AnimatedTitle } from "@/components/shared";
 import { Logo } from "@/components/ui";
+import { pageConfig } from "@/constants";
 
 export const FavouritesHero = () => {
   return (

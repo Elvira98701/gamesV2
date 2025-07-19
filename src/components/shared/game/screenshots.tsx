@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
-import { useGetScreenshotsByIdQuery } from "@/features/games/gamesApi";
-import { Screenshot } from "@/types/types";
-import { Container } from "../container";
-import { Carousel } from "@/components/ui";
+
+import { Loader } from "lucide-react";
+
+import { Container } from "@/components/shared";
 import {
+  Carousel,
   CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Loader } from "lucide-react";
+} from "@/components/ui";
+import { useGetScreenshotsByIdQuery } from "@/features/games/gamesApi";
+import { cn } from "@/lib/utils";
+import { Screenshot } from "@/types/types";
 
 interface ScreenshotsProps {
   className?: string;

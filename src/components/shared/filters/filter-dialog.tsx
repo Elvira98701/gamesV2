@@ -1,12 +1,14 @@
 import { SlidersHorizontal } from "lucide-react";
-import { Dialog } from "@/components/ui";
+
 import {
+  Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui";
+
 import { Filters } from "./filters";
 
 export const FilterDialog = () => {

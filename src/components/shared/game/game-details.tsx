@@ -1,11 +1,13 @@
 import { useRef, useState } from "react";
-import gsap from "gsap";
-import { Brain, Calendar, Clock4, Grid2x2, Star, Wrench } from "lucide-react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Brain, Calendar, Clock4, Grid2x2, Star, Wrench } from "lucide-react";
+
 import { Container } from "@/components/shared";
-import { Game, GameDetails as Details } from "@/types/types";
 import { Button } from "@/components/ui";
+import { Game, GameDetails as Details } from "@/types/types";
 
 gsap.registerPlugin(ScrollTrigger);
 

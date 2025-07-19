@@ -1,18 +1,16 @@
 import { useEffect } from "react";
-import { Pagination } from "@/components/ui";
+
 import {
+  Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination";
+} from "@/components/ui";
+import { selectCurrentPage, setCurrentPage } from "@/features/filter";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
-import {
-  selectCurrentPage,
-  setCurrentPage,
-} from "@/features/filter/filterSlice";
 
 interface GamesPaginationProps {
   count: number;

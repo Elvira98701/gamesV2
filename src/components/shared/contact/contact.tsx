@@ -1,54 +1,11 @@
-import gsap from "gsap";
-import { useRef } from "react";
 import { useMedia } from "react-use";
-import { Container } from "../container";
+
+import { Container } from "@/components/shared";
+
 import { ContactDialog } from "./contact-dialog";
 
 export const Contact = () => {
-  const frameRef = useRef<HTMLImageElement>(null);
   const isWide = useMedia("(min-width: 1050px)");
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLImageElement>) => {
-    if (!isWide) return;
-
-    const { clientX, clientY } = e;
-    const element = frameRef.current;
-
-    if (!element) return;
-
-    const rect = element.getBoundingClientRect();
-    const xPos = clientX - rect.left;
-    const yPos = clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((yPos - centerY) / centerY) * -10;
-    const rotateY = ((xPos - centerX) / centerX) * 10;
-
-    gsap.to(element, {
-      duration: 0.3,
-      rotateX,
-      rotateY,
-      transformPerspective: 500,
-      ease: "power1.inOut",
-    });
-  };
-
-  const handleMouseLeave = () => {
-    if (!isWide) return;
-
-    const element = frameRef.current;
-
-    if (element) {
-      gsap.to(element, {
-        duration: 0.3,
-        rotateX: 0,
-        rotateY: 0,
-        ease: "power1.inOut",
-      });
-    }
-  };
 
   return (
     <section
@@ -71,11 +28,6 @@ export const Contact = () => {
               <div className="contact-img-mask">
                 <div className="contact-img-content">
                   <img
-                    ref={frameRef}
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave}
-                    onMouseUp={handleMouseLeave}
-                    onMouseEnter={handleMouseLeave}
                     src="/images/contact.avif"
                     alt=""
                     className="object-cover object-top"

@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "@/features/hooks";
-import { selectTempGenres, toggleGenre } from "@/features/filter/filterSlice";
-import { useGetGenresQuery } from "@/features/games/gamesApi";
-import { Genre } from "@/types/types";
+
 import { Button, Checkbox, FilterSkeleton, Label } from "@/components/ui";
+import { selectTempGenres, toggleGenre } from "@/features/filter";
+import { useGetGenresQuery } from "@/features/games/gamesApi";
+import { useAppDispatch, useAppSelector } from "@/features/hooks";
+import { Genre } from "@/types/types";
 
 interface GenresProps {
   className?: string;
