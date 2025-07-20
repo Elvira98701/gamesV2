@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useRef } from "react";
 
 import { useTouch } from "@/hooks";
 import { cn } from "@/lib/utils";
@@ -9,32 +9,32 @@ interface BentoTiltProps {
 }
 
 export const BentoTilt = ({ className, children }: BentoTiltProps) => {
-  const [transformStyle, setTransformStyle] = useState("");
   const itemRef = useRef<HTMLDivElement>(null);
+  const frameId = useRef<number | null>(null);
   const isTouch = useTouch();
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (isTouch) return;
+    if (isTouch || !itemRef.current) return;
 
-    if (!itemRef.current) return;
+    if (frameId.current) cancelAnimationFrame(frameId.current);
 
-    const { left, top, width, height } =
-      itemRef.current.getBoundingClientRect();
+    frameId.current = requestAnimationFrame(() => {
+      const { left, top, width, height } =
+        itemRef.current!.getBoundingClientRect();
 
-    const relativeX = (event.clientX - left) / width;
-    const relativeY = (event.clientY - top) / height;
+      const relativeX = (event.clientX - left) / width;
+      const relativeY = (event.clientY - top) / height;
 
-    const tiltX = (relativeY - 1) * 5;
-    const tiltY = (relativeX - 1) * -5;
+      const tiltX = (relativeY - 1) * 5;
+      const tiltY = (relativeX - 1) * -5;
 
-    const newTransform = `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(.95, .95, .95)`;
-    setTransformStyle(newTransform);
+      itemRef.current!.style.transform = `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(.95, .95, .95)`;
+    });
   };
 
   const handleMouseLeave = () => {
-    if (isTouch) return;
-
-    setTransformStyle("");
+    if (isTouch || !itemRef.current) return;
+    itemRef.current.style.transform = "";
   };
 
   return (
@@ -46,7 +46,6 @@ export const BentoTilt = ({ className, children }: BentoTiltProps) => {
       )}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ transform: transformStyle }}
     >
       {children}
     </div>
