@@ -1,7 +1,7 @@
 import { ReactNode, useRef } from "react";
 
-import { useTouch } from "@/hooks";
 import { cn } from "@/lib/utils";
+import { isTouchDevice } from "@/utils";
 
 interface BentoTiltProps {
   className?: string;
@@ -11,12 +11,14 @@ interface BentoTiltProps {
 export const BentoTilt = ({ className, children }: BentoTiltProps) => {
   const itemRef = useRef<HTMLDivElement>(null);
   const frameId = useRef<number | null>(null);
-  const isTouch = useTouch();
+  const isTouchRef = useRef<boolean>(isTouchDevice());
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (isTouch || !itemRef.current) return;
+    if (isTouchRef.current || !itemRef.current) return;
 
-    if (frameId.current) cancelAnimationFrame(frameId.current);
+    if (frameId.current) {
+      cancelAnimationFrame(frameId.current);
+    }
 
     frameId.current = requestAnimationFrame(() => {
       const { left, top, width, height } =
@@ -33,7 +35,7 @@ export const BentoTilt = ({ className, children }: BentoTiltProps) => {
   };
 
   const handleMouseLeave = () => {
-    if (isTouch || !itemRef.current) return;
+    if (isTouchRef.current || !itemRef.current) return;
     itemRef.current.style.transform = "";
   };
 
