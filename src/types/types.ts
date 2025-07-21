@@ -142,3 +142,8 @@ export interface IPageItem {
   href: string;
   title: string;
 }
+
+export enum SortOrder {
+  Asc = "asc",
+  Desc = "desc",
+}

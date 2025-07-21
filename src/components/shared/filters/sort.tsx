@@ -12,6 +12,7 @@ import {
 import { sortList } from "@/constants";
 import { selectOrder, setOrder } from "@/features/filter";
 import { useAppDispatch, useAppSelector } from "@/features/hooks";
+import { SortOrder } from "@/types/types";
 
 export const Sort = () => {
   const dispatch = useAppDispatch();
@@ -33,7 +34,7 @@ export const Sort = () => {
             <SelectItem key={id} value={name} className="cursor-pointer">
               <span className="flex items-center gap-2">
                 <span>{title}</span>{" "}
-                {order === "desc" ? (
+                {order === SortOrder.Desc ? (
                   <MoveDown size={12} />
                 ) : (
                   <MoveUp size={12} />

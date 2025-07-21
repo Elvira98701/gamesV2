@@ -5,9 +5,11 @@ import { Game } from "@/types/types";
 
 import type { RootState } from "../store";
 
+import { FAVOURITES_KEY } from "./favouritesMiddleware";
+
 const loadFromLocalStorage = (): Game[] => {
   try {
-    const savedFavourites = localStorage.getItem("favourites");
+    const savedFavourites = localStorage.getItem(FAVOURITES_KEY);
     return savedFavourites ? JSON.parse(savedFavourites) : [];
   } catch (err) {
     console.error("Error loading data from localStorage:", err);
