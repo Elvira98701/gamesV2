@@ -14,7 +14,11 @@ import { Filters } from "./filters";
 export const FilterDialog = () => {
   return (
     <Dialog>
-      <DialogTrigger className="bg-background text-foreground border shadow-sm transition inline-flex items-center font-bold uppercase rounded-full px-4 py-2 text-sm">
+      <DialogTrigger
+        className="bg-background text-foreground border shadow-sm transition inline-flex items-center font-bold uppercase rounded-full px-4 py-2 text-sm"
+        title="Open filters"
+        aria-label="Open filters"
+      >
         <SlidersHorizontal size={18} />
       </DialogTrigger>
       <DialogContent>

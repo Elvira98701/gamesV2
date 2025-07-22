@@ -19,9 +19,12 @@ export const Requirements = ({ requirements }: RequirementsProps) => {
     : null;
 
   return (
-    <section className="pt-8 lg:pt-14">
+    <section className="pt-8 lg:pt-14" aria-labelledby="requirements-title">
       <Container>
-        <h2 className="middle-text mb-5 lg:mb-10 capitalize">
+        <h2
+          className="middle-text mb-5 lg:mb-10 capitalize"
+          id="requirements-title"
+        >
           System requirements for PC
         </h2>
         <div className="flex flex-col md:flex-row gap-5 lg:gap-10">

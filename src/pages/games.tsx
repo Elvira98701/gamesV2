@@ -18,9 +18,11 @@ export const Games = () => {
         {isWide && (
           <Filters className="hidden md:block max-w-60 2xl:max-w-64 w-full rounded-2xl border p-4" />
         )}
-        <section className="flex-1">
+        <section className="flex-1" aria-labelledby="games-title">
           <div className="mb-5 flex gap-2 xl:gap-6 items-center flex-col xl:flex-row">
-            <h1 className="middle-text">All Games</h1>
+            <h1 className="middle-text" id="games-title">
+              All Games
+            </h1>
             <p className="max-w-[700px] text-sm text-center xl:text-left">
               Welcome to the catalog of the best video games! Here you will find
               popular and highly appreciated projects from various genres,

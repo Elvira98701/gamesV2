@@ -22,7 +22,10 @@ export const Hero = () => {
   });
 
   return (
-    <section className="relative h-lvh w-full lg:p-7 overflow-x-hidden">
+    <section
+      className="relative h-lvh w-full lg:p-7 overflow-x-hidden"
+      aria-labelledby="hero-title"
+    >
       <div
         className="relative h-full w-full overflow-hidden rounded-b-3xl lg:rounded-3xl bg-foreground will-change-auto"
         id="video-frame"
@@ -42,7 +45,7 @@ export const Hero = () => {
         </div>
         <div className="absolute z-20 bottom-10 xl:bottom-1/2 xl:translate-y-1/2 left-0 w-full">
           <Container className="text-background xl:text-foreground lg:pl-10">
-            <h1>
+            <h1 id="hero-title">
               <AnimatedTitle title="GameFinder" />
             </h1>
             <p className="max-w-screen-md pt-2 pb-4 text-sm sm:text-base">

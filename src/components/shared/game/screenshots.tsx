@@ -49,9 +49,14 @@ export const Screenshots = ({ className, id }: ScreenshotsProps) => {
   const screenshots: Screenshot[] = (data && data.results) || [];
 
   return (
-    <section className={cn("pt-16 lg:pt-28", className)}>
+    <section
+      className={cn("pt-16 lg:pt-28", className)}
+      aria-labelledby="screenshots-title"
+    >
       <Container>
-        <h2 className="text-center mb-5 lg:mb-10">Screenshots</h2>
+        <h2 className="text-center mb-5 lg:mb-10" id="screenshots-title">
+          Screenshots
+        </h2>
         <Carousel setApi={setApi} className="w-full max-w-screen-xl mx-auto">
           <CarouselContent>
             {isLoading ? (

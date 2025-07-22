@@ -11,8 +11,11 @@ export const Contact = () => {
     <section
       id="contact"
       className="min-h-[50vh] w-full text-background py-16 lg:py-32"
+      aria-labelledby="contact-title"
     >
-      <h2 className="visually-hidden">Contact</h2>
+      <h2 className="visually-hidden" id="contact-title">
+        Contact
+      </h2>
       <Container className="flex flex-col items-center">
         <p className="text-sm uppercase md:text-[10px]">
           Make our service better

@@ -24,7 +24,11 @@ export const MobileMenu = ({ className, pagesList }: MobileMenuProps) => {
   return (
     <div className={className}>
       <DropdownMenu open={open} onOpenChange={setOpen}>
-        <DropdownMenuTrigger className="flex justify-center items-center">
+        <DropdownMenuTrigger
+          className="flex justify-center items-center"
+          title="Open menu"
+          aria-label="Open menu"
+        >
           <Ellipsis />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="rounded-2xl">

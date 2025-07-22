@@ -33,7 +33,7 @@ export const GameCard = ({ className, game }: GameCardProps) => {
       <Link to={`/game/${game.id}`} className="game-card block min-h-80">
         <CardContent className="p-0">
           <img
-            src={game.background_image}
+            src={game.background_image || "/images/game.jpg"}
             alt={game.name}
             className="size-full object-cover absolute top-0 left-0"
             loading="lazy"
@@ -53,7 +53,8 @@ export const GameCard = ({ className, game }: GameCardProps) => {
       </Link>
       <Button
         type="button"
-        title="add to favourites"
+        title="Add to favourites"
+        aria-label="Add to favourites"
         onClick={handleToggleFavourites}
         className="absolute top-4 right-4 z-20 w-12 h-12 rounded-full bg-background text-foreground hover-hover:bg-foreground hover-hover:text-background"
       >

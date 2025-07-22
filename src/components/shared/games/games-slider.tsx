@@ -23,8 +23,10 @@ export const GamesSlider = () => {
   const games: Game[] = (data && data.results) || [];
 
   return (
-    <section className="py-10 md:py-16 lg:py-20">
-      <h2 className="visually-hidden">Top games</h2>
+    <section className="py-10 md:py-16 lg:py-20" aria-labelledby="top-title">
+      <h2 className="visually-hidden" id="top-title">
+        Top games
+      </h2>
       <Container className="flex justify-center">
         <Carousel
           opts={{

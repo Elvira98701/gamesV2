@@ -43,11 +43,13 @@ export const GameHero = ({ game }: GameHeroProps) => {
   };
 
   return (
-    <section className="pb-4 pt-7 md:py-12">
+    <section className="pb-4 pt-7 md:py-12" aria-labelledby="game-title">
       <Container>
         <div className="rounded-3xl overflow-hidden">
           <div className="game-card min-h-[80vh] flex size-full flex-col gap-2 sm:gap-4 justify-end text-background p-5 relative">
-            <h1 className="title-small z-10 relative max-w-max">{game.name}</h1>
+            <h1 className="title-small z-10 relative max-w-max" id="game-title">
+              {game.name}
+            </h1>
             <div className="flex items-center z-10 relative">
               {game.website && (
                 <ButtonLink
@@ -61,7 +63,8 @@ export const GameHero = ({ game }: GameHeroProps) => {
               <Button
                 size="icon"
                 type="button"
-                title="add to favourites"
+                title="Add to favourites"
+                aria-label="Add to favourites"
                 onClick={handleToggleFavourites}
               >
                 <Heart
@@ -71,7 +74,7 @@ export const GameHero = ({ game }: GameHeroProps) => {
             </div>
             <img
               id="hero-frame"
-              src={game.background_image}
+              src={game.background_image || "/images/game.jpg"}
               alt={game.name}
               className="object-cover object-center size-full absolute top-0 left-0"
             />

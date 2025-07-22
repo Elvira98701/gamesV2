@@ -64,9 +64,15 @@ export const GameDetails = ({
     .join(" ");
 
   return (
-    <section className="pt-16 lg:pt-28" id="details">
+    <section
+      className="pt-16 lg:pt-28"
+      id="details"
+      aria-labelledby="details-title"
+    >
       <Container>
-        <h2 className="text-center">Details</h2>
+        <h2 className="text-center" id="details-title">
+          Details
+        </h2>
         <div className="flex flex-col-reverse xl:flex-row items-center gap-5 lg:gap-10 my-10">
           <div className="w-full lg:max-w-4xl">
             <div className="p-5 2xl:p-10 border border-zinc-800 rounded-xl mb-5 lg:mb-10">

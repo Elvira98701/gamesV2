@@ -2,9 +2,9 @@ import { Container } from "@/components/shared";
 
 export const BrowseGames = () => {
   return (
-    <section>
+    <section aria-labelledby="browse-title">
       <Container className="flex items-center justify-center text-center">
-        <h2 className="max-w-screen-lg">
+        <h2 className="max-w-screen-lg" id="browse-title">
           It's{" "}
           <span className="animated-span inline-block h-8 w-8 md:h-16 md:w-16 bg-foreground rounded-lg">
             <img

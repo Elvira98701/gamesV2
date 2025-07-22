@@ -6,7 +6,10 @@ import { pageConfig } from "@/constants";
 
 export const FavouritesHero = () => {
   return (
-    <section className="pb-4 pt-7 md:py-7 overflow-hidden">
+    <section
+      className="pb-4 pt-7 md:py-7 overflow-hidden"
+      aria-labelledby="favourites-title"
+    >
       <Container className="h-[50vh] flex justify-center gap-4 md:gap-7">
         <BentoTilt className="rounded-xl flex-1">
           <div className="flex size-full flex-col justify-center bg-violet-300 p-5">
@@ -20,7 +23,7 @@ export const FavouritesHero = () => {
           </div>
         </BentoTilt>
         <BentoTilt className="bento-tilt_1 rounded-xl flex-1 bg-[url(/images/gallery/4.avif)] bg-cover bg-center flex flex-col justify-end items-end p-5">
-          <h1 className="title-small text-background">
+          <h1 className="title-small text-background" id="favourites-title">
             <AnimatedTitle title="Favourites" />
           </h1>
         </BentoTilt>
